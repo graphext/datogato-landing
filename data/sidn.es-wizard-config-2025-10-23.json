@@ -1,0 +1,1123 @@
+{
+  "exportedAt": "2025-10-23T16:03:24.448Z",
+  "brandInfo": {
+    "name": "SIDN Digital Thinking",
+    "shortName": "SIDN",
+    "description": "SIDN is a digital marketing agency specializing in SEO, online reputation management, and digital transformation services, with international presence and recognized as one of the best digital marketing agencies in Europe.",
+    "domain": "sidn.es",
+    "sectors": [
+      "Digital Marketing",
+      "Advertising",
+      "Consulting"
+    ],
+    "markets": [
+      "Spain",
+      "United States",
+      "International"
+    ],
+    "portfolio": [
+      {
+        "name": "SEO Positioning",
+        "category": "Digital Marketing"
+      },
+      {
+        "name": "Online Reputation Management",
+        "category": "Digital Marketing"
+      },
+      {
+        "name": "Digital Transformation Consulting",
+        "category": "Consulting"
+      },
+      {
+        "name": "Social Media Management",
+        "category": "Digital Marketing"
+      },
+      {
+        "name": "Content Marketing",
+        "category": "Digital Marketing"
+      }
+    ],
+    "marketPosition": "leader",
+    "favicon": "https://sidn.es/favicon.ico",
+    "sector": "SEO para Visbilidad en AI",
+    "country": "ES",
+    "language": "es",
+    "inferredMarkets": [
+      {
+        "label": "Spain",
+        "countryCode": "ES",
+        "regionCode": null,
+        "languageCode": null
+      },
+      {
+        "label": "United States",
+        "countryCode": "US",
+        "regionCode": null,
+        "languageCode": null
+      },
+      {
+        "label": "International",
+        "countryCode": null,
+        "regionCode": "001",
+        "languageCode": "en"
+      }
+    ],
+    "inferredSectors": [
+      "Digital Marketing",
+      "Advertising",
+      "Consulting"
+    ],
+    "state": "verified",
+    "fieldStates": {
+      "name": "ai-generated",
+      "shortName": "ai-generated",
+      "description": "ai-generated",
+      "sectors": "ai-generated",
+      "markets": "ai-generated",
+      "portfolio": "ai-generated",
+      "marketPosition": "ai-generated",
+      "sector": "user-edited",
+      "country": "ai-generated",
+      "language": "ai-generated"
+    },
+    "source": "user",
+    "edited": false,
+    "icon": {
+      "url": "https://www.google.com/s2/favicons?domain=sidn.es&sz=256",
+      "source": "google-favicon",
+      "alt": "sidn.es"
+    },
+    "marketType": "country",
+    "marketName": "Spain"
+  },
+  "competitors": {
+    "items": [
+      {
+        "name": "NeoAttack",
+        "shortName": "NeoAttack",
+        "description": "A digital marketing agency specializing in SEO, SEM, web design, and social media marketing.",
+        "source": "ai",
+        "edited": false,
+        "domain": "neoattack.com",
+        "favicon": "https://neoattack.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Services",
+            "category": "SEO",
+            "keywordSeeds": [
+              "posicionamiento web",
+              "agencia SEO",
+              "mejorar Google",
+              "marketing digital",
+              "servicios SEO"
+            ]
+          },
+          {
+            "name": "Google Ads Management",
+            "category": "SEM",
+            "keywordSeeds": [
+              "publicidad online",
+              "agencia SEM",
+              "gestión campañas",
+              "marketing digital",
+              "anuncios Google"
+            ]
+          },
+          {
+            "name": "Website Development",
+            "category": "Web Design",
+            "keywordSeeds": [
+              "web design",
+              "website development",
+              "digital marketing agency",
+              "crear página web",
+              "diseño web"
+            ]
+          },
+          {
+            "name": "Social Media Campaigns",
+            "category": "Social Media Marketing",
+            "keywordSeeds": [
+              "social media marketing",
+              "digital advertising",
+              "online promotion",
+              "social networks",
+              "marketing strategies"
+            ]
+          }
+        ],
+        "marketPosition": "leader",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain",
+          "International"
+        ]
+      },
+      {
+        "name": "Elogia",
+        "shortName": "Elogia",
+        "description": "A digital marketing agency focusing on e-commerce marketing, offering services in SEO, SEM, and social media.",
+        "source": "ai",
+        "edited": false,
+        "domain": "elogia.net",
+        "favicon": "https://elogia.net/favicon.ico",
+        "portfolio": [
+          {
+            "name": "E-commerce SEO",
+            "category": "SEO",
+            "keywordSeeds": [
+              "seo ecommerce",
+              "posicionamiento web",
+              "agencia seo",
+              "marketing digital",
+              "tienda online"
+            ]
+          },
+          {
+            "name": "Performance Marketing",
+            "category": "SEM",
+            "keywordSeeds": [
+              "marketing digital",
+              "publicidad online",
+              "campañas SEM",
+              "agencias marketing",
+              "anuncios Google"
+            ]
+          },
+          {
+            "name": "Social Media Strategy",
+            "category": "Social Media Marketing",
+            "keywordSeeds": [
+              "social media marketing",
+              "estrategia redes sociales",
+              "digital marketing",
+              "community management",
+              "marketing online"
+            ]
+          }
+        ],
+        "marketPosition": "leader",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain",
+          "Mexico"
+        ]
+      },
+      {
+        "name": "Internet República",
+        "shortName": "Internet República",
+        "description": "A digital marketing agency specializing in SEO, content marketing, and online reputation management.",
+        "source": "ai",
+        "edited": false,
+        "domain": "internetrepublica.com",
+        "favicon": "https://internetrepublica.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Optimization",
+            "category": "SEO",
+            "keywordSeeds": [
+              "seo services",
+              "website optimization",
+              "digital marketing",
+              "increase website traffic",
+              "search engine ranking"
+            ]
+          },
+          {
+            "name": "Content Creation",
+            "category": "Content Marketing",
+            "keywordSeeds": [
+              "marketing de contenidos",
+              "creación de contenidos",
+              "agencia de contenidos",
+              "estrategias de contenido",
+              "contenido digital"
+            ]
+          },
+          {
+            "name": "Reputation Monitoring",
+            "category": "Online Reputation Management",
+            "keywordSeeds": [
+              "gestión de reputación",
+              "monitorización online",
+              "reputación digital",
+              "opiniones internet",
+              "gestión de crisis"
+            ]
+          }
+        ],
+        "marketPosition": "challenger",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "Adglow",
+        "shortName": "Adglow",
+        "description": "A global digital marketing agency specializing in paid social media advertising and campaign management.",
+        "source": "ai",
+        "edited": false,
+        "domain": "adglow.com",
+        "favicon": "https://www.adglow.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "Paid Social Advertising",
+            "category": "Social Media Marketing",
+            "keywordSeeds": [
+              "social media advertising",
+              "paid social campaigns",
+              "online advertising",
+              "facebook ads",
+              "digital marketing services"
+            ]
+          },
+          {
+            "name": "Campaign Optimization",
+            "category": "Campaign Management",
+            "keywordSeeds": [
+              "digital marketing",
+              "campaign management",
+              "online advertising",
+              "marketing automation",
+              "ad optimization"
+            ]
+          },
+          {
+            "name": "Creative Services",
+            "category": "Creative Design",
+            "keywordSeeds": [
+              "diseño gráfico",
+              "servicios creativos",
+              "agencia de diseño",
+              "marketing digital",
+              "creatividad online"
+            ]
+          }
+        ],
+        "marketPosition": "leader",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain",
+          "International"
+        ]
+      },
+      {
+        "name": "Human Level",
+        "shortName": "Human Level",
+        "description": "A digital marketing consultancy offering services in SEO, SEM, and web analytics.",
+        "source": "ai",
+        "edited": false,
+        "domain": "humanlevel.com",
+        "favicon": "https://www.humanlevel.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Audits",
+            "category": "SEO",
+            "keywordSeeds": [
+              "auditoría SEO",
+              "mejorar posicionamiento web",
+              "análisis de sitio web",
+              "consultoría SEO",
+              "optimización motores búsqueda"
+            ]
+          },
+          {
+            "name": "PPC Campaigns",
+            "category": "SEM",
+            "keywordSeeds": [
+              "publicidad online",
+              "campañas SEM",
+              "marketing digital",
+              "anuncios Google",
+              "agencia SEM"
+            ]
+          },
+          {
+            "name": "Web Analytics",
+            "category": "Analytics",
+            "keywordSeeds": [
+              "web analytics",
+              "website traffic",
+              "digital marketing tools",
+              "site performance",
+              "online marketing analysis"
+            ]
+          }
+        ],
+        "marketPosition": "niche",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "iSocialWeb",
+        "shortName": "iSocialWeb",
+        "description": "A digital marketing agency specializing in SEO, SEM, and web development.",
+        "source": "ai",
+        "edited": false,
+        "domain": "isocialweb.agency",
+        "favicon": "https://www.isocialweb.agency/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Strategy",
+            "category": "SEO",
+            "keywordSeeds": [
+              "estrategia SEO",
+              "posicionamiento web",
+              "mejorar Google",
+              "marketing digital",
+              "agencia SEO"
+            ]
+          },
+          {
+            "name": "Google Ads Management",
+            "category": "SEM",
+            "keywordSeeds": [
+              "publicidad online",
+              "gestión de anuncios",
+              "marketing digital",
+              "campañas SEM",
+              "agencia SEM"
+            ]
+          },
+          {
+            "name": "Website Design",
+            "category": "Web Development",
+            "keywordSeeds": [
+              "web design",
+              "website development",
+              "create website",
+              "digital marketing",
+              "online business"
+            ]
+          }
+        ],
+        "marketPosition": "challenger",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "BlackBeast",
+        "shortName": "BlackBeast",
+        "description": "A digital marketing agency offering services in SEO, SEM, and social media marketing.",
+        "source": "ai",
+        "edited": false,
+        "domain": "blackbeast.pro",
+        "favicon": "https://blackbeast.pro/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Optimization",
+            "category": "SEO",
+            "keywordSeeds": [
+              "seo posicionamiento",
+              "mejorar google",
+              "trafico web",
+              "agencia seo",
+              "marketing digital"
+            ]
+          },
+          {
+            "name": "PPC Advertising",
+            "category": "SEM",
+            "keywordSeeds": [
+              "publicidad online",
+              "anuncios en google",
+              "marketing digital",
+              "campañas ppc",
+              "estrategias sem"
+            ]
+          },
+          {
+            "name": "Social Media Management",
+            "category": "Social Media Marketing",
+            "keywordSeeds": [
+              "social media marketing",
+              "social media management",
+              "redes sociales empresa",
+              "gestión redes sociales",
+              "marketing digital"
+            ]
+          }
+        ],
+        "marketPosition": "niche",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "BigSEO",
+        "shortName": "BigSEO",
+        "description": "A digital marketing agency focusing on SEO, content marketing, and web analytics.",
+        "source": "ai",
+        "edited": false,
+        "domain": "bigseo.com",
+        "favicon": "https://bigseo.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Services",
+            "category": "SEO",
+            "keywordSeeds": [
+              "posicionamiento web",
+              "seo marketing",
+              "mejorar web google",
+              "agencia seo",
+              "consultoría seo"
+            ]
+          },
+          {
+            "name": "Content Strategy",
+            "category": "Content Marketing",
+            "keywordSeeds": [
+              "estrategia de contenidos",
+              "marketing digital",
+              "gestión de contenidos",
+              "plan de contenidos",
+              "agencia de contenidos"
+            ]
+          },
+          {
+            "name": "Data Analysis",
+            "category": "Analytics",
+            "keywordSeeds": [
+              "marketing analytics",
+              "data analysis tools",
+              "digital marketing reports",
+              "web traffic analysis",
+              "conversion tracking"
+            ]
+          }
+        ],
+        "marketPosition": "challenger",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "La Teva Web",
+        "shortName": "La Teva Web",
+        "description": "A web design and digital marketing agency offering SEO, SEM, and social media services.",
+        "source": "ai",
+        "edited": false,
+        "domain": "latevaweb.com",
+        "favicon": "https://www.latevaweb.com/favicon.ico",
+        "portfolio": [
+          {
+            "name": "Website Development",
+            "category": "Web Design",
+            "keywordSeeds": [
+              "web design",
+              "website development",
+              "digital marketing",
+              "online presence",
+              "web agency"
+            ]
+          },
+          {
+            "name": "SEO Optimization",
+            "category": "SEO",
+            "keywordSeeds": [
+              "posicionamiento web",
+              "seo profesional",
+              "agencia seo",
+              "mejorar Google",
+              "trafico web"
+            ]
+          },
+          {
+            "name": "Google Ads Campaigns",
+            "category": "SEM",
+            "keywordSeeds": [
+              "publicidad online",
+              "marketing digital",
+              "anuncios internet",
+              "campañas SEM",
+              "estrategias marketing"
+            ]
+          }
+        ],
+        "marketPosition": "niche",
+        "sectors": [
+          "Digital Marketing",
+          "Web Design"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      },
+      {
+        "name": "K-Digital",
+        "shortName": "K-Digital",
+        "description": "A digital marketing agency specializing in SEO, SEM, and content marketing.",
+        "source": "ai",
+        "edited": false,
+        "domain": "k-digital.es",
+        "favicon": "https://k-digital.es/favicon.ico",
+        "portfolio": [
+          {
+            "name": "SEO Services",
+            "category": "SEO",
+            "keywordSeeds": [
+              "posicionamiento web",
+              "seo marketing",
+              "agencia seo",
+              "mejorar google",
+              "consultoría seo"
+            ]
+          },
+          {
+            "name": "PPC Management",
+            "category": "SEM",
+            "keywordSeeds": [
+              "ppc advertising",
+              "sem services",
+              "online marketing",
+              "digital advertising",
+              "search engine marketing"
+            ]
+          },
+          {
+            "name": "Content Creation",
+            "category": "Content Marketing",
+            "keywordSeeds": [
+              "content marketing",
+              "content creation",
+              "digital marketing",
+              "social media strategy",
+              "seo content"
+            ]
+          }
+        ],
+        "marketPosition": "follower",
+        "sectors": [
+          "Digital Marketing"
+        ],
+        "markets": [
+          "Spain"
+        ]
+      }
+    ],
+    "state": "verified",
+    "lastFetchedAt": "2025-10-23T15:17:54.769Z"
+  },
+  "personas": {
+    "items": [
+      {
+        "name": "Director de Marketing Empresarial",
+        "description": "Profesional con amplia experiencia en marketing de grandes empresas españolas. Busca soluciones integrales para campañas a gran escala, prioriza resultados medibles y la gestión integral de canales digitales.",
+        "keywordSeeds": [
+          "agencia marketing digital",
+          "servicios de SEM",
+          "gestión campañas online",
+          "consultoría marketing empresas",
+          "estrategias de branding digital",
+          "automatización marketing España",
+          "publicidad en redes sociales",
+          "analítica web avanzada",
+          "SEO para empresas",
+          "mejorar conversiones online"
+        ]
+      },
+      {
+        "name": "Emprendedor Digital",
+        "description": "Fundador de una startup o pequeña empresa en España. Tiene recursos limitados pero muchas ganas de crecer. Busca servicios asequibles, flexibles y tecnológicos que le ayuden a aumentar la presencia digital y atraer clientes.",
+        "keywordSeeds": [
+          "marketing digital para pymes",
+          "presupuesto marketing online",
+          "crecimiento startups digitales",
+          "publicidad online barata",
+          "gestión redes sociales",
+          "diseño web profesional",
+          "campañas Google Ads",
+          "captación de leads",
+          "marketing de contenidos",
+          "soluciones SEO locales"
+        ]
+      },
+      {
+        "name": "Responsable de Comunicación en Turismo",
+        "description": "Profesional del sector turístico (hoteles, agencias de viaje, ocio) que necesita destacar en un sector muy competitivo, priorizando la visibilidad en internet, la reputación de marca y la captación de turistas nacionales e internacionales.",
+        "keywordSeeds": [
+          "marketing digital turismo",
+          "campañas social media turismo",
+          "agencia marketing hoteles",
+          "estrategias branding turístico",
+          "publicidad online viajes",
+          "gestión reputación online turismo",
+          "SEO para destinos turísticos",
+          "email marketing viajes",
+          "reservas online optimización",
+          "promoción experiencias turísticas"
+        ]
+      },
+      {
+        "name": "Comerciante Tradicional en Transformación Digital",
+        "description": "Dueño de un pequeño comercio tradicional que busca adaptarse a la era digital. Valora la formación, la facilidad de uso y la confianza en los proveedores. Busca digitalizar su negocio para captar clientes locales y aumentar sus ventas.",
+        "keywordSeeds": [
+          "digitalizar comercio local",
+          "marketing para tiendas físicas",
+          "crear tienda online",
+          "posicionamiento SEO local",
+          "publicidad digital en mi ciudad",
+          "gestión de redes sociales comercios",
+          "programas de fidelización digital",
+          "consultoría transformación digital",
+          "estrategias ventas online",
+          "soluciones ecommerce económicas"
+        ]
+      },
+      {
+        "name": "Analista Digital Corporativo",
+        "description": "Especialista en datos y performance digital dentro de una empresa mediana o grande. Busca herramientas, informes y estrategias avanzadas para optimizar campañas, mejorar el ROI y entender mejor al cliente digital.",
+        "keywordSeeds": [
+          "analítica digital avanzada",
+          "herramientas marketing digital",
+          "informes de rendimiento online",
+          "estrategias CRO",
+          "medición multicanal",
+          "automatización de informes",
+          "segmentación de audiencias online",
+          "A/B testing campañas digitales",
+          "personalización web",
+          "inteligencia de datos marketing"
+        ]
+      }
+    ],
+    "state": "verified",
+    "lastFetchedAt": "2025-10-23T15:17:18.477Z"
+  },
+  "funnel": {
+    "stages": [
+      {
+        "name": "Descubrimiento / Conciencia",
+        "categories": [
+          {
+            "name": "Identificación de Problemas SEO/IA",
+            "description": "Búsquedas para entender retos de visibilidad, indexación, cómo afecta la IA, o caídas de tráfico.",
+            "keywordPatterns": [
+              "preguntas",
+              "cómo",
+              "por qué",
+              "soluciones",
+              "consejos"
+            ],
+            "intent": "Informativo",
+            "examples": [
+              "caída tráfico orgánico IA",
+              "google no indexa mi web",
+              "por qué bajó mi tráfico seo",
+              "problemas visibilidad google AI",
+              "cómo afecta inteligencia artificial SEO",
+              "mejorar visibilidad web IA",
+              "motores búsqueda inteligencia artificial SEO",
+              "motivos baja posicionamiento orgánico",
+              "errores comunes seo con IA",
+              "cómo saber si google penalizó mi sitio"
+            ]
+          },
+          {
+            "name": "Educación sobre SEO en IA",
+            "description": "Exploración general para aprender sobre SEO, IA y su relación, sin mención de servicios concretos.",
+            "keywordPatterns": [
+              "qué es",
+              "tipos de",
+              "guía",
+              "manual",
+              "introducción"
+            ],
+            "intent": "Informativo",
+            "examples": [
+              "seo inteligencia artificial",
+              "qué es seo en ia",
+              "cómo funciona seo con ia",
+              "guía seo para inteligencia artificial",
+              "ejemplos de seo con ia",
+              "relación seo y inteligencia artificial",
+              "introducción seo ia",
+              "tipos de seo con inteligencia artificial",
+              "tendencias seo inteligencia artificial",
+              "inteligencia artificial aplicada al seo"
+            ]
+          },
+          {
+            "name": "Tendencias y Novedades SEO/IA",
+            "description": "Búsqueda de ideas, novedades o tendencias en SEO, aparición de IA y tecnologías nuevas en buscadores.",
+            "keywordPatterns": [
+              "tendencias",
+              "ideas",
+              "novedades",
+              "popular",
+              "último"
+            ],
+            "intent": "Informativo",
+            "examples": [
+              "tendencias seo 2024",
+              "novedades en buscadores",
+              "inteligencia artificial seo",
+              "cómo cambia seo con ia",
+              "nuevas tecnologías google",
+              "impacto ia en buscadores",
+              "futuro del seo",
+              "cambios algoritmos google",
+              "seo y machine learning",
+              "qué es seo inteligente"
+            ]
+          }
+        ],
+        "goal": "Reconocimiento del problema, educación e inspiración."
+      },
+      {
+        "name": "Investigación / Consideración",
+        "categories": [
+          {
+            "name": "Funcionalidades y Herramientas",
+            "description": "Interés por herramientas, características o métodos relacionados con SEO y visibilidad ante IA.",
+            "keywordPatterns": [
+              "herramientas",
+              "funciones",
+              "mejor para",
+              "características"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "mejores herramientas seo ia",
+              "comparativa seo inteligencia artificial",
+              "funciones seo adaptadas a ia",
+              "cómo usar ia para seo",
+              "características plataformas seo con ia",
+              "diferencias seo tradicional vs seo con ia",
+              "automatización seo con inteligencia artificial",
+              "soluciones seo basadas en ia",
+              "evaluar herramientas seo ia",
+              "seo para buscadores de ia"
+            ]
+          },
+          {
+            "name": "Comparativas y Alternativas",
+            "description": "Búsquedas comparativas entre estrategias, herramientas, agencias o metodologías para el SEO en IA.",
+            "keywordPatterns": [
+              "vs",
+              "comparar",
+              "alternativas",
+              "mejores que"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "mejor estrategia seo con inteligencia artificial",
+              "alternativas a herramientas seo con ia",
+              "seo tradicional vs seo con ia",
+              "comparativa agencias seo ia",
+              "agencias seo con inteligencia artificial opiniones",
+              "diferencias entre seo clásico y seo automático",
+              "herramientas seo basadas en ia comparativa",
+              "qué es mejor para posicionar seo tradicional o con ia",
+              "mejores plataformas seo con inteligencia artificial",
+              "elegir consultoría seo con ia"
+            ]
+          },
+          {
+            "name": "Casos de Uso y Sectores",
+            "description": "Evaluar la aplicación o idoneidad del SEO en IA para nichos, industrias o situaciones específicas.",
+            "keywordPatterns": [
+              "mejor para",
+              "casos de uso",
+              "sectores",
+              "ejemplos"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "casos de éxito seo inteligencia artificial",
+              "seo para empresas de tecnología",
+              "mejores estrategias seo para IA",
+              "sectores donde aplicar seo con IA",
+              "ejemplos seo adaptado a IA",
+              "cómo usar seo en proyectos de inteligencia artificial",
+              "seo en salud con inteligencia artificial",
+              "seo para ecommerce con IA",
+              "impacto de la IA en seo sector financiero",
+              "estrategias seo inteligentes por sector"
+            ]
+          },
+          {
+            "name": "Opiniones y Experiencias",
+            "description": "Búsqueda de valoraciones, reseñas o casos reales sobre SEO y AI.",
+            "keywordPatterns": [
+              "opiniones",
+              "reseñas",
+              "casos de éxito",
+              "testimonios"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "experiencias seo con inteligencia artificial",
+              "opiniones seo ai",
+              "casos de éxito seo ai",
+              "reseñas herramientas seo ai",
+              "mejor seo para webs con ai",
+              "testimonios seo inteligencia artificial",
+              "comparativa seo tradicional vs ai",
+              "valoran resultados seo ai",
+              "feedback usuarios seo ai",
+              "experiencia real seo inteligencia artificial"
+            ]
+          }
+        ],
+        "goal": "Comparar y evaluar soluciones SEO adaptadas a la IA."
+      },
+      {
+        "name": "Evaluación / Decisión",
+        "categories": [
+          {
+            "name": "Precios y Servicios",
+            "description": "Información sobre precios, paquetes o servicios especializados en SEO orientado a visibilidad para IA.",
+            "keywordPatterns": [
+              "precio",
+              "tarifa",
+              "plan",
+              "coste",
+              "descuento"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "precios seo para inteligencia artificial",
+              "mejor agencia seo para ai",
+              "comparativa servicios seo IA",
+              "planes seo para proyectos IA",
+              "cuánto cuesta seo para IA",
+              "seo especializado inteligencia artificial precios",
+              "tarifas seo para plataformas IA",
+              "paquetes seo consultoría IA",
+              "servicios seo para startups IA"
+            ]
+          },
+          {
+            "name": "Disponibilidad y Contratación",
+            "description": "Localización de servicios, agencias, expertos o recursos para contratación.",
+            "keywordPatterns": [
+              "contratar",
+              "consultor seo IA",
+              "agencia cerca",
+              "servicio online",
+              "contacto"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "mejor agencia seo ia madrid",
+              "consultor seo inteligencia artificial precios",
+              "servicio seo especializado ia",
+              "agencia seo cerca de mí con IA",
+              "contratar experto seo ia",
+              "disponibilidad consultoria seo inteligencia artificial",
+              "agencia seo inteligencia artificial opiniones",
+              "contacto agencia seo ia",
+              "presupuesto servicio seo ia"
+            ]
+          },
+          {
+            "name": "Pruebas y Auditorías Gratuitas",
+            "description": "Intención de probar servicios, solicitar auditorías SEO o pruebas sin compromiso.",
+            "keywordPatterns": [
+              "auditoría gratuita",
+              "demo",
+              "prueba gratis",
+              "análisis gratis"
+            ],
+            "intent": "Comercial / Investigación",
+            "examples": [
+              "mejores herramientas auditoría seo gratis",
+              "comparativa pruebas seo inteligencia artificial",
+              "solicitar análisis seo IA sin coste",
+              "cómo conseguir auditoría SEO con IA",
+              "demo gratuita SEO inteligencia artificial",
+              "servicios análisis seo gratis IA",
+              "análisis posición web gratis IA",
+              "opiniones auditoría seo gratis IA",
+              "revisión seo automatizada sin pagar"
+            ]
+          }
+        ],
+        "goal": "El usuario está cerca de convertir, pero compara opciones concretas, precios o disponibilidad."
+      },
+      {
+        "name": "Conversión / Acción",
+        "categories": [
+          {
+            "name": "Contratación y Registro",
+            "description": "Palabras clave alineadas a la acción final: contratar, registrarse, demo formal.",
+            "keywordPatterns": [
+              "contratar",
+              "registro",
+              "inscribirse",
+              "solicitar demo"
+            ],
+            "intent": "Transaccional",
+            "examples": [
+              "mejores servicios seo ai",
+              "agencias seo inteligencia artificial",
+              "precio posicionamiento web con ai",
+              "presupuesto seo con inteligencia artificial",
+              "contratar consultor seo especializado ai",
+              "plataformas seo inteligentes registro",
+              "demo posicionamiento seo ai",
+              "asesoría seo basada en ai",
+              "plan seo inteligencia artificial contratar",
+              "comparativa herramientas seo con ai"
+            ]
+          },
+          {
+            "name": "Ofertas Inmediatas",
+            "description": "Búsqueda de promociones, descuentos o códigos para contratar o probar servicios especiales.",
+            "keywordPatterns": [
+              "oferta",
+              "código descuento",
+              "promoción",
+              "cupón"
+            ],
+            "intent": "Transaccional",
+            "examples": [
+              "seo inteligencia artificial descuento",
+              "oferta seo con IA",
+              "cupón seo automatizado",
+              "promoción posicionamiento IA",
+              "paquete seo AI precio",
+              "seo IA prueba gratis",
+              "contratar seo IA barato",
+              "precio servicio seo inteligencia artificial",
+              "mejor oferta seo con IA",
+              "descuento servicio seo AI"
+            ]
+          }
+        ],
+        "goal": "El usuario realiza la contratación, se registra o comienza el servicio."
+      },
+      {
+        "name": "Post-Compra / Retención & Fidelización",
+        "categories": [
+          {
+            "name": "Uso y Formación",
+            "description": "Guías, tutoriales y formación para clientes sobre el uso de SEO en contextos de IA.",
+            "keywordPatterns": [
+              "cómo usar",
+              "tutorial",
+              "formación",
+              "guía",
+              "manual"
+            ],
+            "intent": "Retención / Post-Compra",
+            "examples": [
+              "mejorar seo con inteligencia artificial",
+              "tutorial seo para clientes",
+              "manual ia seo",
+              "formación seo con ia",
+              "guía prácticas seo inteligencia artificial",
+              "casos de éxito seo ia",
+              "soporte seo inteligencia artificial",
+              "optimizar contenidos con ia",
+              "automatizar seo post compra",
+              "estrategias fidelización seo ia"
+            ]
+          },
+          {
+            "name": "Soporte y Resolución de Problemas",
+            "description": "Ayuda post-compra, FAQs y resolución de incidencias con visibilidad y herramientas SEO IA.",
+            "keywordPatterns": [
+              "problema",
+              "soporte",
+              "ayuda",
+              "faq",
+              "solución"
+            ],
+            "intent": "Retención / Post-Compra",
+            "examples": [
+              "problemas con herramientas seo ia",
+              "soporte seo inteligencia artificial",
+              "cómo usar funciones avanzadas seo ia",
+              "guía postcompra seo ia",
+              "faq herramientas seo ia",
+              "mejorar resultados seo tras compra",
+              "ayuda configuración seo ia",
+              "errores comunes seo ia",
+              "soluciones incidencias seo ia",
+              "sacar partido seo inteligencia artificial"
+            ]
+          },
+          {
+            "name": "Ampliaciones & Extras",
+            "description": "Búsqueda de servicios extra, ampliaciones de servicio, funcionalidades avanzadas para los ya clientes.",
+            "keywordPatterns": [
+              "ampliar",
+              "extra",
+              "upgrade",
+              "servicios premium"
+            ],
+            "intent": "Retención / Post-Compra",
+            "examples": [
+              "mejorar posicionamiento web IA",
+              "actualizar SEO inteligencia artificial",
+              "plugins avanzados SEO IA",
+              "servicios premium SEO IA",
+              "soporte técnico SEO IA",
+              "consultoría SEO para clientes",
+              "optimizaciones extra SEO IA",
+              "funcionalidades adicionales SEO IA",
+              "retener clientes SEO IA",
+              "upgrades SEO inteligencia artificial"
+            ]
+          },
+          {
+            "name": "Comunidad y Recomendación",
+            "description": "Participar en comunidades, compartir experiencias y recomendar servicios.",
+            "keywordPatterns": [
+              "foro",
+              "comunidad",
+              "compartir experiencia",
+              "recomendar",
+              "testimonio"
+            ],
+            "intent": "Retención / Post-Compra",
+            "examples": [
+              "mejorar uso seo inteligencia artificial",
+              "comunidad seo inteligencia artificial",
+              "experiencias optimizar seo ia",
+              "testimonios éxito seo ia",
+              "foros soporte seo ia",
+              "recomendar agencia seo ia",
+              "consejos fidelizar clientes seo ia",
+              "compartir resultados seo inteligencia artificial",
+              "resolución dudas seo comunidad ia",
+              "mejorar fidelidad clientes seo ia"
+            ]
+          }
+        ],
+        "goal": "Apoyo a clientes, potenciando el uso, fidelidad y la defensa de la marca."
+      }
+    ],
+    "state": "verified",
+    "lastFetchedAt": "2025-10-23T15:21:46.654Z"
+  },
+  "seedKeywordsData": {
+    "customKeywords": [],
+    "state": "verified"
+  }
+}
