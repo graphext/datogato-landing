@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Manrope, Cherry_Cream_Soda } from "next/font/google";
+import { Header } from "@/sections/Header";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -16,7 +17,7 @@ const cherryCream = Cherry_Cream_Soda({
   display: "swap",
 });
 
-const title = "Gatodato · Agencia SEO IA en Madrid";
+const title = "Gatodato · Mejor Agencia para Visibilidad en AI de España";
 const description =
   "Gatodato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
 const url = "https://gatodato.com";
@@ -115,6 +116,9 @@ export default function RootLayout({
         >
           {JSON.stringify(jsonLd)}
         </Script>
+        <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
+          <Header />
+        </div>
         {children}
       </body>
     </html>

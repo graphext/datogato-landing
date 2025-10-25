@@ -5,6 +5,8 @@ import { Process } from "@/sections/Process";
 import { Personas } from "@/sections/Personas";
 import { CaseStudies } from "@/sections/CaseStudies";
 import { Testimonials } from "@/sections/Testimonials";
+import { AboutSection } from "@/sections/About";
+import { BlogSection } from "@/sections/Blog";
 import { FAQ } from "@/sections/FAQ";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
@@ -13,7 +15,7 @@ import { GrillIcon } from "@/components/graphics/GrillIcon";
 export default function Page() {
   return (
     <div className="bg-texture">
-      <div className="mx-auto max-w-6xl px-6 pb-12 pt-20 sm:px-10">
+      <div className="mx-auto max-w-6xl px-6 pb-12 pt-32 sm:px-10">
         <Hero />
         <div className="mt-16 grid gap-16">
           <Services />
@@ -27,6 +29,8 @@ export default function Page() {
           <Personas />
           <CaseStudies />
           <Testimonials />
+          <AboutSection />
+          <BlogSection />
           <FAQ />
           <ContactSection />
         </div>
