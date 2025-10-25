@@ -8,7 +8,7 @@ export const brand = {
 };
 
 export const hero = {
-  badge: "Agencia SEO IA Madrid",
+  badge: "Agencia SEO especializada en visibilidad en IA",
   title: "Haz que la IA te encuentre primero",
   subtitle:
     "Optimizamos tu presencia para ChatGPT, Google AI Overview, Gemini, Perplexity, Grok y los modelos que tus clientes consultan a diario.",

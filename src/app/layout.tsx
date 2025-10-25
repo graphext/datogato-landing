@@ -116,12 +116,12 @@ export default function RootLayout({
         >
           {JSON.stringify(jsonLd)}
         </Script>
-        <div className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
+        <div className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4">
           <div className="pointer-events-auto">
             <Header />
           </div>
         </div>
-        <div className="pt-[120px]">{children}</div>
+        <div className="pt-[20px] sm:pt-[20px] lg:pt-[20px]">{children}</div>
       </body>
     </html>
   );
