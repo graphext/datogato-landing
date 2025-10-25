@@ -84,7 +84,7 @@ export async function POST(request: Request) {
     subject,
     text: `Nuevo lead recibido:\n\n${leadDetails}`,
     html: htmlBody,
-    reply_to: payload.email,
+    replyTo: payload.email,
   });
 
   if (error) {
