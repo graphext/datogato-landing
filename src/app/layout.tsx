@@ -53,6 +53,14 @@ export const metadata: Metadata = {
     title,
     description,
   },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/icon.svg" },
+    ],
+  },
   alternates: {
     canonical: url,
   },
