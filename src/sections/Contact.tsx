@@ -76,31 +76,6 @@ export function ContactSection() {
             );
           }
 
-          if (field.type === "select" && field.options) {
-            return (
-              <label key={field.name}>
-                <span className="text-sm font-semibold uppercase tracking-widest text-[#a04c2d]">
-                  {field.label}
-                </span>
-                <select
-                  name={field.name}
-                  required={field.required}
-                  defaultValue=""
-                  className="mt-2 w-full rounded-3xl border border-[#d9b38a] bg-[#f8d7b3] px-4 py-3 text-sm text-[#5c2e1a] shadow-inner shadow-[#f4d9b7] focus:border-[#a04c2d] focus:outline-none focus:ring-2 focus:ring-[#a04c2d]/40"
-                >
-                  <option value="" disabled>
-                    Selecciona una opción
-                  </option>
-                  {field.options.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            );
-          }
-
           return (
             <label key={field.name}>
               <span className="text-sm font-semibold uppercase tracking-widest text-[#a04c2d]">
