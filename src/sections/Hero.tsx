@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { hero, stats } from "@/lib/content";
+import { hero } from "@/lib/content";
 import Image from "next/image";
-import { BadgeSeal } from "@/components/graphics/BadgeSeal";
 
 export function Hero() {
   return (
@@ -30,17 +29,6 @@ export function Hero() {
               {hero.ctaSecondary.label}
             </Link>
           </div>
-          <dl className="grid gap-4 sm:grid-cols-3">
-            {stats.map((item) => (
-              <div
-                key={item.label}
-                className="rounded-3xl border border-[#d9b38a] bg-[#fdf2e3] px-4 py-3 text-center shadow-[4px_8px_0_rgba(92,46,26,0.15)]"
-              >
-                <dt className="text-sm font-medium text-[#8c3f1f]/80">{item.label}</dt>
-                <dd className="mt-1 text-2xl font-semibold text-[#5c2e1a]">{item.value}</dd>
-              </div>
-            ))}
-          </dl>
         </div>
         <div className="relative mx-auto flex max-w-sm flex-1 justify-center">
           <div className="relative w-full max-w-[384px]">
@@ -52,7 +40,6 @@ export function Hero() {
               className="h-auto w-full drop-shadow-[12px_18px_0_rgba(92,46,26,0.25)]"
               priority
             />
-            <BadgeSeal text="v.0 3·Nov·2025" className="absolute -bottom-6 -left-6" />
             <div className="absolute -top-4 -right-4 rounded-full bg-[#f4d9b7] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[#a04c2d] shadow-[4px_6px_0_rgba(92,46,26,0.2)]">
               Lanzamiento oficial
             </div>
