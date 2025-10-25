@@ -2,9 +2,9 @@ import Link from "next/link";
 import { Lato } from "next/font/google";
 
 const navigation = [
-  { label: "Metodología", href: "#metodologia" },
-  { label: "Casos", href: "#casos" },
-  { label: "Nosotros", href: "#nosotros" },
+  { label: "Metodología", href: "/#metodologia" },
+  { label: "Casos", href: "/#casos" },
+  { label: "Nosotros", href: "/#nosotros" },
   { label: "Blog", href: "/blog" },
 ];
 
@@ -28,7 +28,7 @@ export function Header() {
           ))}
         </nav>
         <Link
-          href="#contacto"
+          href="/#contacto"
           className="inline-flex items-center justify-center rounded-full bg-[#a04c2d] px-5 py-2 text-xs font-semibold uppercase text-[#fdf2e3] shadow-[4px_6px_0_rgba(92,46,26,0.25)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f] sm:px-6"
         >
           Hablemos

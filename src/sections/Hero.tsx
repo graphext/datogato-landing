@@ -14,7 +14,9 @@ export function Hero() {
           <h1 className="section-title text-4xl leading-tight sm:text-5xl">
             {hero.title}
           </h1>
-          <p className="max-w-xl text-lg text-[#5c2e1a]/80">{hero.subtitle}</p>
+          <p className="max-w-xl text-lg text-[#5c2e1a]/80">
+            SEO para <strong>visibilidad en IA</strong>. {hero.subtitle}
+          </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href={hero.ctaPrimary.target}

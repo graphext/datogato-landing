@@ -9,16 +9,16 @@ export const brand = {
 
 export const hero = {
   badge: "Agencia SEO especializada en visibilidad en IA",
-  title: "Haz que la IA te encuentre primero",
+  title: "Logramos que la IA recomiende tu negocio primero",
   subtitle:
-    "Optimizamos tu presencia para ChatGPT, Google AI Overview, Gemini, Perplexity, Grok y los modelos que tus clientes consultan a diario.",
+    "Optimizamos tu presencia en los prompts que importan para ChatGPT, Google AI Overview, Gemini, Perplexity y Grok para que ayudarte a conseguir más clientes",
   ctaPrimary: {
     label: "Solicitar diagnóstico IA",
-    target: "#contacto",
+    target: "/#contacto",
   },
   ctaSecondary: {
     label: "Ver metodologías",
-    target: "#metodologia",
+    target: "/#metodologia",
   },
 };
 
@@ -159,7 +159,7 @@ export const personas = {
         "Optimizamos historias y guías con foco en experiencias humanas que IA retiene y recomienda.",
     },
   ],
-};
+} as const;
 
 export const cases = {
   title: "Casos que abren resultados en IA",
@@ -183,7 +183,7 @@ export const cases = {
         "Reescribimos fichas de producto con tono humano y señalamos atributos diferenciadores para ChatGPT.",
     },
   ],
-};
+} as const;
 
 export const testimonials = {
   title: "Clientes que lideran con IA",
@@ -278,11 +278,11 @@ export const footer = {
   links: [
     {
       label: "Metodología",
-      href: "#metodologia",
+      href: "/#metodologia",
     },
     {
       label: "Casos de éxito",
-      href: "#casos",
+      href: "/#casos",
     },
     {
       label: "Blog",
@@ -290,11 +290,11 @@ export const footer = {
     },
     {
       label: "FAQ",
-      href: "#faq",
+      href: "/#faq",
     },
     {
       label: "Contacto",
-      href: "#contacto",
+      href: "/#contacto",
     },
   ],
   legal: [
