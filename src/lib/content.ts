@@ -259,8 +259,8 @@ export const contact = {
       {
         name: "url",
         label: "URL de la empresa",
-        type: "url",
-        placeholder: "https://tuempresa.com",
+        type: "text",
+        placeholder: "tuempresa.com",
         required: true,
       },
       {
@@ -272,7 +272,7 @@ export const contact = {
       },
     ],
   },
-};
+} as const;
 
 export const footer = {
   links: [

@@ -14,6 +14,20 @@ function escapeHtml(value: string) {
     .replace(/'/g, "&#39;");
 }
 
+function normalizeUrl(value: string) {
+  const trimmed = value.trim();
+
+  if (trimmed.length === 0) {
+    return trimmed;
+  }
+
+  if (/^[a-zA-Z][a-zA-Z0-9+.-]*:\/\//.test(trimmed)) {
+    return trimmed;
+  }
+
+  return `https://${trimmed}`;
+}
+
 export async function POST(request: Request) {
   const formData = await request.formData();
   const payload = Object.fromEntries(formData.entries()) as ContactPayload;
@@ -61,15 +75,20 @@ export async function POST(request: Request) {
     .map((email) => email.trim())
     .filter(Boolean);
 
+  const normalizedPayload: ContactPayload = {
+    ...payload,
+    url: normalizeUrl(payload.url ?? ""),
+  };
+
   const subject = `Nuevo lead Gatodato – ${payload.nombre}`;
-  const leadDetails = Object.entries(payload)
+  const leadDetails = Object.entries(normalizedPayload)
     .map(([key, value]) => `${key}: ${value}`)
     .join("\n");
 
   const htmlBody = `
     <h2>Nuevo lead recibido</h2>
     <ul>
-      ${Object.entries(payload)
+      ${Object.entries(normalizedPayload)
         .map(
           ([key, value]) =>
             `<li><strong>${escapeHtml(key)}:</strong> ${escapeHtml(String(value ?? ""))}</li>`,
@@ -99,7 +118,7 @@ export async function POST(request: Request) {
   }
 
   console.info("Nuevo lead Gatodato enviado", {
-    ...payload,
+    ...normalizedPayload,
     recibidoEn: new Date().toISOString(),
     mensajeId: data?.id,
   });
