@@ -240,7 +240,7 @@ export const contact = {
   subtitle:
     "Cuéntanos tu reto y recibe un informe inicial en menos de 72 horas con oportunidades concretas en asistentes IA.",
   form: {
-    submitLabel: "Enviar diagnóstico",
+    submitLabel: "Solicitar diagnóstico",
     fields: [
       {
         name: "nombre",
@@ -257,24 +257,10 @@ export const contact = {
         required: true,
       },
       {
-        name: "empresa",
-        label: "Empresa",
-        type: "text",
-        placeholder: "Nombre de tu organización",
-        required: true,
-      },
-      {
-        name: "modelo",
-        label: "Modelo IA prioritario",
-        type: "select",
-        options: [
-          "ChatGPT",
-          "Google AI Overview",
-          "Gemini",
-          "Perplexity",
-          "Grok",
-          "Otro",
-        ],
+        name: "url",
+        label: "URL de la empresa",
+        type: "url",
+        placeholder: "https://tuempresa.com",
         required: true,
       },
       {

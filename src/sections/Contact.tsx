@@ -1,6 +1,49 @@
+"use client";
+
 import { contact } from "@/lib/content";
+import { useState } from "react";
 
 export function ContactSection() {
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [message, setMessage] = useState<string | null>(null);
+
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("loading");
+    setMessage(null);
+
+    try {
+      const response = await fetch(form.action || "/api/contact", {
+        method: form.method || "POST",
+        body: formData,
+      });
+
+      if (!response.ok) {
+        const data = await response.json().catch(() => null);
+        const errorMessage = typeof data?.error === "string"
+          ? data.error
+          : "No hemos podido enviar tu solicitud. Inténtalo de nuevo.";
+        throw new Error(errorMessage);
+      }
+
+      setStatus("success");
+      setMessage("¡Gracias! Hemos recibido tu solicitud y te contactaremos muy pronto.");
+      form.reset();
+    } catch (error) {
+      console.error("Contact form submission error", error);
+      setStatus("error");
+      setMessage(
+        error instanceof Error
+          ? error.message
+          : "No hemos podido enviar tu solicitud. Inténtalo más tarde.",
+      );
+    }
+  };
+
   return (
     <section
       id="contacto"
@@ -14,6 +57,7 @@ export function ContactSection() {
         method="post"
         action="/api/contact"
         className="mt-8 grid gap-6 md:grid-cols-2"
+        onSubmit={handleSubmit}
       >
         {contact.form.fields.map((field) => {
           if (field.type === "textarea") {
@@ -75,12 +119,22 @@ export function ContactSection() {
         <div className="md:col-span-2">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#a04c2d] px-6 py-4 text-sm font-semibold uppercase tracking-[0.4em] text-[#fdf2e3] shadow-[6px_10px_0_rgba(92,46,26,0.35)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f]"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[#a04c2d] px-6 py-4 text-sm font-semibold uppercase tracking-[0.4em] text-[#fdf2e3] shadow-[6px_10px_0_rgba(92,46,26,0.35)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f] disabled:cursor-not-allowed disabled:opacity-70"
+            disabled={status === "loading"}
           >
-            {contact.form.submitLabel}
+            {status === "loading" ? "Enviando..." : contact.form.submitLabel}
           </button>
         </div>
       </form>
+      {message && (
+        <p
+          className={`mt-4 text-sm font-semibold uppercase tracking-widest ${status === "success" ? "text-[#3f7f3d]" : "text-[#a04c2d]"}`}
+          role="status"
+          aria-live="polite"
+        >
+          {message}
+        </p>
+      )}
     </section>
   );
 }
