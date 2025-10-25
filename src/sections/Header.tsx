@@ -5,7 +5,7 @@ const navigation = [
   { label: "Metodología", href: "#metodologia" },
   { label: "Casos", href: "#casos" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Blog", href: "#blog" },
+  { label: "Blog", href: "/blog" },
 ];
 
 const lato = Lato({ subsets: ["latin"], weight: "700" });

@@ -285,6 +285,10 @@ export const footer = {
       href: "#casos",
     },
     {
+      label: "Blog",
+      href: "/blog",
+    },
+    {
       label: "FAQ",
       href: "#faq",
     },

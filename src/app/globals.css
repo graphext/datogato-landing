@@ -26,6 +26,27 @@ body {
   line-height: 1.6;
 }
 
+.blog-content p {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.blog-content li + li {
+  margin-top: 0.6rem;
+}
+
+.blog-content a {
+  font-weight: 700;
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.blog-content a:hover {
+  color: var(--accent-light);
+}
+
 :where(section[id]) {
   scroll-margin-top: 144px;
 }
