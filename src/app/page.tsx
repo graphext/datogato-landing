@@ -25,9 +25,6 @@ export default function Page() {
             className="relative overflow-hidden rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-10 shadow-[12px_16px_0_rgba(92,46,26,0.18)]"
             aria-labelledby="metodologia-title"
           >
-            <div className="absolute -right-10 -top-10 h-48 w-48 opacity-70">
-              <GrillIcon className="h-full w-full" />
-            </div>
             <Process />
           </section>
           <Personas />
