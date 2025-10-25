@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
-export const siteUrl = "https://datogato.com";
-export const siteName = "Datogato";
+export const siteUrl = "https://gatodato.com";
+export const siteName = "Gatodato";
 
 export function robots(): MetadataRoute.Robots {
   return {

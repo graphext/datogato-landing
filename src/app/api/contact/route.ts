@@ -31,7 +31,7 @@ export async function POST(request: Request) {
   }
 
   // Placeholder para integrar con CRM o email provider
-  console.info("Nuevo lead Datogato", {
+  console.info("Nuevo lead Gatodato", {
     ...payload,
     recibidoEn: new Date().toISOString(),
   });

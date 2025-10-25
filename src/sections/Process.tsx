@@ -4,7 +4,7 @@ export function Process() {
   return (
     <section id={process.id} className="space-y-8">
       <header className="text-center">
-        <h2 className="section-title text-3xl">Metodología Datogato</h2>
+        <h2 className="section-title text-3xl">Metodología Gatodato</h2>
         <p className="mt-3 text-[#5c2e1a]/80">
           Nuestra hoja de ruta conecta insights técnicos, creatividad humana y datos estructurados para IA.
         </p>

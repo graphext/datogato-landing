@@ -1,9 +1,9 @@
 export const brand = {
-  name: "Datogato",
+  name: "Gatodato",
   slogan: "SEO para visibilidad en IA",
   city: "Madrid",
   address: "Calle Gran Vía, 1, 28013",
-  email: "hola@datogato.com",
+  email: "hola@gatodato.com",
   phone: "+34 910 000 000",
 };
 
@@ -63,7 +63,7 @@ export const services = [
     description:
       "Trackeamos tus menciones en motores de IA para detectar huecos y activar mejoras continuas.",
     deliverables: [
-      "Dashboard Datogato Radar",
+      "Dashboard Gatodato Radar",
       "Alertas de desplazamiento en respuestas",
       "Testing con prompts realistas por persona",
     ],
@@ -129,7 +129,7 @@ export const process = {
     {
       title: "Monitorización iterativa",
       description:
-        "Medimos share of answers, afinamos prompts y lanzamos experimentos basados en datos del radar Datogato.",
+        "Medimos share of answers, afinamos prompts y lanzamos experimentos basados en datos del radar Gatodato.",
     },
   ],
 };
@@ -190,13 +190,13 @@ export const testimonials = {
   items: [
     {
       quote:
-        "Datogato nos abrió la puerta a conversaciones donde antes no existíamos. Las ventas por recomendaciones IA ya superan el tráfico SEO tradicional.",
+        "Gatodato nos abrió la puerta a conversaciones donde antes no existíamos. Las ventas por recomendaciones IA ya superan el tráfico SEO tradicional.",
       author: "Laura Gómez",
       role: "CMO · TravelCo",
     },
     {
       quote:
-        "El radar de Datogato nos alerta cuando ChatGPT deja de mencionarnos. Hemos reducido a la mitad el tiempo de reacción.",
+        "El radar de Gatodato nos alerta cuando ChatGPT deja de mencionarnos. Hemos reducido a la mitad el tiempo de reacción.",
       author: "Javier Ruiz",
       role: "Head of Growth · FinBoost",
     },

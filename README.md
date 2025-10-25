@@ -1,10 +1,10 @@
-# Datogato · Landing SEO IA
+# Gatodato · Landing SEO IA
 
 Landing page desarrollada con Next.js (App Router) y Tailwind CSS 4.1. El proyecto replica la estética vintage del póster de lanzamiento y está optimizado para SEO enfocado en visibilidad dentro de motores de inteligencia artificial.
 
 ## Stack
 - Next.js 16 con TypeScript
-- Tailwind CSS 4.1 + diseño personalizado Datogato
+- Tailwind CSS 4.1 + diseño personalizado Gatodato
 - Bun como package manager y runtime
 - API Route para recepción de leads (`/api/contact`)
 

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { hero, stats } from "@/lib/content";
-import { DatogatoCat } from "@/components/graphics/DatogatoCat";
+import Image from "next/image";
 import { BadgeSeal } from "@/components/graphics/BadgeSeal";
 
 export function Hero() {
@@ -19,13 +19,13 @@ export function Hero() {
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href={hero.ctaPrimary.target}
-              className="group inline-flex items-center justify-center rounded-full bg-[#a04c2d] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[#fdf2e3] shadow-[6px_10px_0_rgba(92,46,26,0.35)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f]"
+              className="group inline-flex items-center justify-center whitespace-nowrap rounded-full bg-[#a04c2d] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[#fdf2e3] shadow-[6px_10px_0_rgba(92,46,26,0.35)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f]"
             >
               {hero.ctaPrimary.label}
             </Link>
             <Link
               href={hero.ctaSecondary.target}
-              className="inline-flex items-center justify-center rounded-full border-2 border-[#a04c2d] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[#a04c2d] transition hover:bg-[#f8d7b3]"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-full border-2 border-[#a04c2d] px-6 py-3 text-sm font-semibold uppercase tracking-widest text-[#a04c2d] transition hover:bg-[#f8d7b3]"
             >
               {hero.ctaSecondary.label}
             </Link>
@@ -43,8 +43,15 @@ export function Hero() {
           </dl>
         </div>
         <div className="relative mx-auto flex max-w-sm flex-1 justify-center">
-          <div className="relative w-full max-w-[320px]">
-            <DatogatoCat className="w-full drop-shadow-[12px_18px_0_rgba(92,46,26,0.25)]" />
+          <div className="relative w-full max-w-[384px]">
+            <Image
+              src="/assets/image.png"
+              alt="Ilustración de gato y modelos de IA"
+              width={384}
+              height={256}
+              className="h-auto w-full drop-shadow-[12px_18px_0_rgba(92,46,26,0.25)]"
+              priority
+            />
             <BadgeSeal text="v.0 3·Nov·2025" className="absolute -bottom-6 -left-6" />
             <div className="absolute -top-4 -right-4 rounded-full bg-[#f4d9b7] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-[#a04c2d] shadow-[4px_6px_0_rgba(92,46,26,0.2)]">
               Lanzamiento oficial

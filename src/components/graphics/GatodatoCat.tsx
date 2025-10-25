@@ -1,4 +1,4 @@
-export function DatogatoCat({ className }: { className?: string }) {
+export function GatodatoCat({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 220 220"

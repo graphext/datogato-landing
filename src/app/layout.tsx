@@ -16,16 +16,16 @@ const cherryCream = Cherry_Cream_Soda({
   display: "swap",
 });
 
-const title = "Datogato · Agencia SEO IA en Madrid";
+const title = "Gatodato · Agencia SEO IA en Madrid";
 const description =
-  "Datogato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
-const url = "https://datogato.com";
+  "Gatodato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
+const url = "https://gatodato.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
   title: {
     default: title,
-    template: "%s · Datogato",
+    template: "%s · Gatodato",
   },
   description,
   keywords: [
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     url,
     type: "website",
     locale: "es_ES",
-    siteName: "Datogato",
+    siteName: "Gatodato",
   },
   twitter: {
     card: "summary_large_image",
@@ -69,13 +69,13 @@ export default function RootLayout({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "Datogato",
+    name: "Gatodato",
     url,
     description,
     logo: `${url}/og-image.jpg`,
     sameAs: [
-      "https://www.linkedin.com/company/datogato",
-      "https://x.com/datogato",
+      "https://www.linkedin.com/company/gatodato",
+      "https://x.com/gatodato",
     ],
     address: {
       "@type": "PostalAddress",
@@ -99,7 +99,7 @@ export default function RootLayout({
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "sales",
-      email: "hola@datogato.com",
+      email: "hola@gatodato.com",
       telephone: "+34 910 000 000",
       availableLanguage: ["es", "en"],
     },
