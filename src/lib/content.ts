@@ -9,7 +9,7 @@ export const brand = {
 
 export const hero = {
   badge: "Agencia SEO especializada en visibilidad en IA",
-  title: "Logramos que la IA recomiende tu negocio primero",
+  title: "Hacemos tu marca visible en ChatGPT",
   subtitle:
     "Optimizamos tu presencia en los prompts que importan para ChatGPT, Google AI Overview, Gemini, Perplexity y Grok para que ayudarte a conseguir más clientes",
   ctaPrimary: {
