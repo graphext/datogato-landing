@@ -108,7 +108,7 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className={`${manrope.variable} ${cherryCream.variable} antialiased`}>
+      <body className={`${manrope.variable} ${cherryCream.variable} antialiased scroll-smooth`}>
         <Script
           id="ld-json-organization"
           type="application/ld+json"
@@ -116,10 +116,12 @@ export default function RootLayout({
         >
           {JSON.stringify(jsonLd)}
         </Script>
-        <div className="fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
-          <Header />
+        <div className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6">
+          <div className="pointer-events-auto">
+            <Header />
+          </div>
         </div>
-        {children}
+        <div className="pt-[120px]">{children}</div>
       </body>
     </html>
   );

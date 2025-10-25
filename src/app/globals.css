@@ -26,6 +26,26 @@ body {
   line-height: 1.6;
 }
 
+:where(section[id]) {
+  scroll-margin-top: 144px;
+}
+
+@media (max-width: 768px) {
+  :where(section[id]) {
+    scroll-margin-top: 184px;
+  }
+}
+
+section#metodologia {
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 768px) {
+  section#metodologia {
+    scroll-margin-top: 220px;
+  }
+}
+
 ::selection {
   background: var(--accent);
   color: var(--background);

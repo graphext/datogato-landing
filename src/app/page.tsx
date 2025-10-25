@@ -14,18 +14,22 @@ import { GrillIcon } from "@/components/graphics/GrillIcon";
 
 export default function Page() {
   return (
-    <div className="bg-texture">
+    <main className="bg-texture">
       <div className="mx-auto max-w-6xl px-6 pb-12 pt-32 sm:px-10">
         <Hero />
         <div className="mt-16 grid gap-16">
           <Services />
           <Platforms />
-          <div className="relative overflow-hidden rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-10 shadow-[12px_16px_0_rgba(92,46,26,0.18)]">
+          <section
+            id="metodologia"
+            className="relative overflow-hidden rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-10 shadow-[12px_16px_0_rgba(92,46,26,0.18)]"
+            aria-labelledby="metodologia-title"
+          >
             <div className="absolute -right-10 -top-10 h-48 w-48 opacity-70">
               <GrillIcon className="h-full w-full" />
             </div>
             <Process />
-          </div>
+          </section>
           <Personas />
           <CaseStudies />
           <Testimonials />
@@ -36,6 +40,6 @@ export default function Page() {
         </div>
         <Footer />
       </div>
-    </div>
+    </main>
   );
 }

@@ -1,0 +1,5 @@
+---
+alwaysApply: true
+---
+
+Never terminate the primary dev server bound to port 3000. If you need to run your own instance, launch it on a different port (e.g. 3001+) and shut down only the instance you started. Before killing any process, double-check the port to avoid touching 3000. 
