@@ -55,10 +55,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon_gatodato.svg", type: "image/svg+xml" },
+      { url: "/favicon_gatodato.svg", rel: "shortcut icon" },
     ],
     apple: [
-      { url: "/icon.svg" },
+      { url: "/favicon_gatodato.svg" },
     ],
   },
   alternates: {

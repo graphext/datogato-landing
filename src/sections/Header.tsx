@@ -1,5 +1,5 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Lato } from "next/font/google";
 
 const navigation = [
   { label: "Metodología", href: "/#metodologia" },
@@ -8,17 +8,23 @@ const navigation = [
   { label: "Blog", href: "/blog" },
 ];
 
-const lato = Lato({ subsets: ["latin"], weight: "700" });
-
 export function Header() {
   return (
     <header className="backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-[#d9b38a] bg-[#fdf2e3]/90 px-6 py-3 shadow-[6px_10px_0_rgba(92,46,26,0.18)] transition sm:px-10">
         <Link
           href="/"
-          className={`${lato.className} text-lg lowercase text-[#5c2e1a] transition hover:text-[#a04c2d] sm:text-xl`}
+          className="flex items-center transition hover:opacity-90"
         >
-          gatodato
+          <Image
+            src="/assets/gatodato_logo.png"
+            alt="Gatodato"
+            width={180}
+            height={60}
+            priority
+            className="h-8 w-auto sm:h-10"
+          />
+          <span className="sr-only">Gatodato</span>
         </Link>
         <nav className="hidden items-center gap-6 text-xs font-semibold uppercase text-[#5c2e1a]/80 lg:flex">
           {navigation.map((item) => (
