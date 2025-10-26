@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
-import { Manrope, Cherry_Cream_Soda } from "next/font/google";
+import { DM_Sans, Cherry_Cream_Soda } from "next/font/google";
 import { Header } from "@/sections/Header";
 import "./globals.css";
 
-const manrope = Manrope({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-dm-sans",
   display: "swap",
 });
 
@@ -118,7 +118,9 @@ export default function RootLayout({
 
   return (
     <html lang="es">
-      <body className={`${manrope.variable} ${cherryCream.variable} antialiased scroll-smooth`}>
+      <body
+        className={`${dmSans.className} ${dmSans.variable} ${cherryCream.variable} antialiased scroll-smooth`}
+      >
         <Script
           id="ld-json-organization"
           type="application/ld+json"

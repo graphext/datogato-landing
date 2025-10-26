@@ -15,7 +15,7 @@
   --color-accent: var(--accent);
   --color-accent-light: var(--accent-light);
   --font-display: var(--font-cherry);
-  --font-sans: var(--font-manrope);
+  --font-sans: var(--font-dm-sans);
 }
 
 body {
