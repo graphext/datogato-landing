@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { Manrope, Cherry_Cream_Soda } from "next/font/google";
 import { Header } from "@/sections/Header";
 import "./globals.css";
@@ -131,6 +132,7 @@ export default function RootLayout({
           </div>
         </div>
         <div className="pt-[20px] sm:pt-[20px] lg:pt-[20px]">{children}</div>
+        <Analytics />
       </body>
     </html>
   );
