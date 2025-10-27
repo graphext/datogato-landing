@@ -3,6 +3,7 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { DM_Sans, Cherry_Cream_Soda } from "next/font/google";
 import { Header } from "@/sections/Header";
+import { canonical } from "@/lib/metadata";
 import "./globals.css";
 
 const dmSans = DM_Sans({
@@ -21,7 +22,7 @@ const cherryCream = Cherry_Cream_Soda({
 const title = "Gatodato · Mejor Agencia para Visibilidad en AI de España";
 const description =
   "Gatodato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
-const url = "https://gatodato.com";
+const url = canonical;
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),

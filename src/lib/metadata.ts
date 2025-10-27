@@ -3,6 +3,7 @@ import { getPostSummaries } from "@/lib/blog";
 
 export const siteUrl = "https://gatodato.com";
 export const siteName = "Gatodato";
+export const canonical = "https://gatodato.com";
 
 export function robots(): MetadataRoute.Robots {
   return {
@@ -11,6 +12,7 @@ export function robots(): MetadataRoute.Robots {
       allow: "/",
     },
     sitemap: `${siteUrl}/sitemap.xml`,
+    host: canonical.replace(/^https?:\/\//, ""),
   };
 }
 
