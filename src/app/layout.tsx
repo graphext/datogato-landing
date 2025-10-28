@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
+import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/next";
 import { DM_Sans, Cherry_Cream_Soda } from "next/font/google";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
@@ -155,7 +156,11 @@ export default function RootLayout({
           </div>
         </div>
         <div className="pt-[20px] sm:pt-[20px] lg:pt-[20px]">{children}</div>
-        {GA_MEASUREMENT_ID ? <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} /> : null}
+        {GA_MEASUREMENT_ID ? (
+          <Suspense fallback={null}>
+            <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+          </Suspense>
+        ) : null}
         <Analytics />
       </body>
     </html>
