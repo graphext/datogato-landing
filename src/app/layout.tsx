@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { DM_Sans, Cherry_Cream_Soda } from "next/font/google";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/sections/Header";
 import { canonical } from "@/lib/metadata";
 import "./globals.css";
@@ -23,6 +24,7 @@ const title = "Gatodato · Mejor Agencia para Visibilidad en AI de España";
 const description =
   "Gatodato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
 const url = canonical;
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -129,12 +131,31 @@ export default function RootLayout({
         >
           {JSON.stringify(jsonLd)}
         </Script>
+        {GA_MEASUREMENT_ID ? (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}', {
+                  anonymize_ip: true,
+                });
+              `}
+            </Script>
+          </>
+        ) : null}
         <div className="pointer-events-none fixed left-0 right-0 top-0 z-50 px-4 pt-3 sm:px-6 sm:pt-4">
           <div className="pointer-events-auto">
             <Header />
           </div>
         </div>
         <div className="pt-[20px] sm:pt-[20px] lg:pt-[20px]">{children}</div>
+        {GA_MEASUREMENT_ID ? <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} /> : null}
         <Analytics />
       </body>
     </html>
