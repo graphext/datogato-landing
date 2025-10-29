@@ -2,24 +2,11 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Suspense } from "react";
 import { Analytics } from "@vercel/analytics/next";
-import { DM_Sans, Cherry_Cream_Soda } from "next/font/google";
+import { dmSans, cherryCream, lora } from "./fonts";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/sections/Header";
 import { canonical } from "@/lib/metadata";
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  subsets: ["latin"],
-  variable: "--font-dm-sans",
-  display: "swap",
-});
-
-const cherryCream = Cherry_Cream_Soda({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-cherry",
-  display: "swap",
-});
 
 const title = "Gatodato · Mejor Agencia para Visibilidad en AI de España";
 const description =
@@ -123,7 +110,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body
-        className={`${dmSans.className} ${dmSans.variable} ${cherryCream.variable} antialiased scroll-smooth`}
+        className={`${dmSans.className} ${dmSans.variable} ${cherryCream.variable} ${lora.variable} antialiased scroll-smooth`}
       >
         <Script
           id="ld-json-organization"

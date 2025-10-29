@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { hero } from "@/lib/content";
 import Image from "next/image";
+import { lora } from "@/app/fonts";
 
 export function Hero() {
   return (
@@ -11,7 +12,7 @@ export function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-theme-dark bg-input px-4 py-2 text-xs font-semibold uppercase text-accent-dark shadow-[4px_6px_0_var(--shadow-lg)]">
             {hero.badge}
           </span>
-          <h1 className="section-title text-4xl leading-tight sm:text-5xl">
+          <h1 className={`${lora.className} font-medium italic normal-case tracking-normal text-[2.75rem] leading-tight sm:text-[3.5rem] lg:text-[3.75rem]`}>
             {hero.title}
           </h1>
           <p className="max-w-xl text-lg text-foreground-80">
