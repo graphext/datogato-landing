@@ -2,10 +2,10 @@ import { testimonials } from "@/lib/content";
 
 export function Testimonials() {
   return (
-    <section className="rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-8 shadow-[12px_16px_0_rgba(92,46,26,0.18)]">
+    <section className="rounded-[48px] border border-theme bg-card p-8 shadow-[12px_16px_0_var(--shadow-md)]">
       <header className="space-y-3 text-center">
         <h2 className="section-title text-3xl">{testimonials.title}</h2>
-        <p className="text-[#5c2e1a]/75">
+        <p className="text-foreground-75">
           Historias que muestran cómo los asistentes de IA recomiendan a nuestros clientes.
         </p>
       </header>
@@ -13,14 +13,14 @@ export function Testimonials() {
         {testimonials.items.map((item) => (
           <figure
             key={item.author}
-            className="flex h-full flex-col justify-between rounded-[28px] border border-[#d9b38a] bg-[#f5e7d4] p-6 shadow-[6px_10px_0_rgba(92,46,26,0.16)]"
+            className="flex h-full flex-col justify-between rounded-[28px] border border-theme bg-light p-6 shadow-[6px_10px_0_var(--shadow-sm)]"
           >
-            <blockquote className="text-sm text-[#5c2e1a]/80">
+            <blockquote className="text-sm text-foreground-80">
               “{item.quote}”
             </blockquote>
-            <figcaption className="mt-6 text-[0.85rem] font-semibold text-[#5c2e1a]">
+            <figcaption className="mt-6 text-[0.85rem] font-semibold text-foreground">
               {item.author}
-              <span className="block text-xs font-medium uppercase tracking-wide text-[#a04c2d]">
+              <span className="block text-xs font-medium uppercase tracking-wide text-accent">
                 {item.role}
               </span>
             </figcaption>

@@ -68,19 +68,19 @@ export default async function BlogPostPage({ params }: { params: Promise<Params>
       <div className="mx-auto max-w-6xl px-6 pb-16 pt-32 sm:px-10">
         <Link
           href="/blog"
-          className="inline-flex items-center text-sm font-semibold text-[#a04c2d] transition hover:text-[#5c2e1a]"
+          className="inline-flex items-center text-sm font-semibold text-accent transition hover:text-foreground"
         >
           ← Volver al blog
         </Link>
-        <article className="mt-8 space-y-6 rounded-[40px] border border-[#d9b38a] bg-[#fdf2e3] p-10 shadow-[12px_18px_0_rgba(92,46,26,0.18)]">
+        <article className="mt-8 space-y-6 rounded-[40px] border border-theme bg-card p-10 shadow-[12px_18px_0_var(--shadow-md)]">
           <header className="space-y-3">
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#a04c2d]">{formattedDate}</p>
-            <h1 className="text-3xl font-semibold text-[#5c2e1a]">{post.title}</h1>
-            <p className="text-sm text-[#5c2e1a]/80">Por {post.author}</p>
-            <p className="text-[#5c2e1a]/80">{post.description}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">{formattedDate}</p>
+            <h1 className="text-3xl font-semibold text-foreground">{post.title}</h1>
+            <p className="text-sm text-foreground-80">Por {post.author}</p>
+            <p className="text-foreground-80">{post.description}</p>
           </header>
           <div
-            className="blog-content prose prose-lg prose-headings:text-[#5c2e1a] prose-p:text-[#5c2e1a]/85 prose-strong:text-[#a04c2d] prose-li:marker:text-[#a04c2d]"
+            className="blog-content prose prose-lg prose-headings:text-[var(--foreground)] prose-p:text-[color-mix(in_srgb,var(--foreground)_85%,transparent)] prose-strong:text-[var(--accent)] prose-li:marker:text-[var(--accent)]"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

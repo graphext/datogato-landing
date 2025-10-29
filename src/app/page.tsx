@@ -22,7 +22,7 @@ export default function Page() {
           <Platforms />
           <section
             id="metodologia"
-            className="relative overflow-hidden rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-10 shadow-[12px_16px_0_rgba(92,46,26,0.18)]"
+            className="relative overflow-hidden rounded-[48px] border border-theme bg-card p-10 shadow-[12px_16px_0_var(--shadow-md)]"
             aria-labelledby="metodologia-title"
           >
             <Process />

@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { brand, footer } from "@/lib/content";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Footer() {
   return (
-    <footer className="mt-16 border-t border-[#d9b38a] pt-10 text-sm text-[#5c2e1a]/70">
+    <footer className="mt-16 border-t border-theme pt-10 text-sm text-foreground-70">
       <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
         <div>
           <h3 className="section-title text-lg">{brand.name}</h3>
@@ -11,7 +12,7 @@ export function Footer() {
         </div>
         <nav className="flex flex-wrap gap-4 uppercase tracking-widest text-xs">
           {footer.links.map((link) => (
-            <Link key={link.href} href={link.href} className="hover:text-[#a04c2d]">
+            <Link key={link.href} href={link.href} className="hover:text-[var(--accent)]">
               {link.label}
             </Link>
           ))}
@@ -21,13 +22,16 @@ export function Footer() {
         <p>
           &copy; {new Date().getFullYear()} {brand.name}. Todos los derechos reservados.
         </p>
-        <nav className="flex gap-4">
-          {footer.legal.map((item) => (
-            <Link key={item.href} href={item.href} className="hover:text-[#a04c2d]">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <nav className="flex gap-4">
+            {footer.legal.map((item) => (
+              <Link key={item.href} href={item.href} className="hover:text-[var(--accent)]">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
       </div>
     </footer>
   );

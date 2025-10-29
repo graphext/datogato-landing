@@ -47,11 +47,11 @@ export function ContactSection() {
   return (
     <section
       id="contacto"
-      className="rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-8 shadow-[12px_16px_0_rgba(92,46,26,0.18)]"
+      className="rounded-[48px] border border-theme bg-card p-8 shadow-[12px_16px_0_var(--shadow-md)]"
     >
       <header className="max-w-2xl space-y-4">
         <h2 className="section-title text-3xl">{contact.title}</h2>
-        <p className="text-[#5c2e1a]/75">{contact.subtitle}</p>
+        <p className="text-foreground-75">{contact.subtitle}</p>
       </header>
       <form
         method="post"
@@ -63,14 +63,14 @@ export function ContactSection() {
           if (field.type === "textarea") {
             return (
               <label key={field.name} className="md:col-span-2">
-                <span className="text-sm font-semibold uppercase tracking-widest text-[#a04c2d]">
+                <span className="text-sm font-semibold uppercase tracking-widest text-accent">
                   {field.label}
                 </span>
                 <textarea
                   name={field.name}
                   placeholder={field.placeholder}
                   required={field.required}
-                  className="mt-2 h-32 w-full resize-vertical rounded-3xl border border-[#d9b38a] bg-[#f8d7b3] px-4 py-3 text-sm text-[#5c2e1a] shadow-inner shadow-[#f4d9b7] focus:border-[#a04c2d] focus:outline-none focus:ring-2 focus:ring-[#a04c2d]/40"
+                  className="mt-2 h-32 w-full resize-vertical rounded-3xl border border-theme bg-input px-4 py-3 text-sm text-foreground shadow-inner shadow-inner-accent focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--accent)_40%,transparent)]"
                 />
               </label>
             );
@@ -78,7 +78,7 @@ export function ContactSection() {
 
           return (
             <label key={field.name}>
-              <span className="text-sm font-semibold uppercase tracking-widest text-[#a04c2d]">
+              <span className="text-sm font-semibold uppercase tracking-widest text-accent">
                 {field.label}
               </span>
               <input
@@ -86,7 +86,7 @@ export function ContactSection() {
                 type={field.type}
                 placeholder={field.placeholder}
                 required={field.required}
-                className="mt-2 w-full rounded-3xl border border-[#d9b38a] bg-[#f8d7b3] px-4 py-3 text-sm text-[#5c2e1a] shadow-inner shadow-[#f4d9b7] focus:border-[#a04c2d] focus:outline-none focus:ring-2 focus:ring-[#a04c2d]/40"
+                className="mt-2 w-full rounded-3xl border border-theme bg-input px-4 py-3 text-sm text-foreground shadow-inner shadow-inner-accent focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[color-mix(in_srgb,var(--accent)_40%,transparent)]"
               />
             </label>
           );
@@ -94,7 +94,7 @@ export function ContactSection() {
         <div className="md:col-span-2">
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#a04c2d] px-6 py-4 text-sm font-semibold uppercase tracking-[0.4em] text-[#fdf2e3] shadow-[6px_10px_0_rgba(92,46,26,0.35)] transition hover:translate-y-0.5 hover:bg-[#8c3f1f] disabled:cursor-not-allowed disabled:opacity-70"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[var(--accent)] px-6 py-4 text-sm font-semibold uppercase tracking-[0.4em] text-[var(--card-bg)] shadow-[6px_10px_0_var(--shadow-strong)] transition hover:translate-y-0.5 hover:bg-[var(--accent-dark)] disabled:cursor-not-allowed disabled:opacity-70"
             disabled={status === "loading"}
           >
             {status === "loading" ? "Enviando..." : contact.form.submitLabel}
@@ -103,7 +103,7 @@ export function ContactSection() {
       </form>
       {message && (
         <p
-          className={`mt-4 text-sm font-semibold uppercase tracking-widest ${status === "success" ? "text-[#3f7f3d]" : "text-[#a04c2d]"}`}
+          className={`mt-4 text-sm font-semibold uppercase tracking-widest ${status === "success" ? "text-[var(--color-success)]" : "text-accent"}`}
           role="status"
           aria-live="polite"
         >

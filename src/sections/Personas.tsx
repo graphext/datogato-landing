@@ -2,10 +2,10 @@ import { personas } from "@/lib/content";
 
 export function Personas() {
   return (
-    <section className="rounded-[48px] border border-[#d9b38a] bg-[#fdf2e3] p-8 shadow-[12px_16px_0_rgba(92,46,26,0.18)]">
+    <section className="rounded-[48px] border border-theme bg-card p-8 shadow-[12px_16px_0_var(--shadow-md)]">
       <header className="space-y-4 text-center">
         <h2 className="section-title text-3xl">{personas.title}</h2>
-        <p className="text-[#5c2e1a]/75">
+        <p className="text-foreground-75">
           Entendemos las prioridades de marketing, crecimiento y reputación de tus equipos para acelerar decisiones IA.
         </p>
       </header>
@@ -13,18 +13,18 @@ export function Personas() {
         {personas.personas.map((persona) => (
           <article
             key={persona.name}
-            className="rounded-[28px] border border-[#d9b38a] bg-[#f5e7d4] p-6 text-left shadow-[6px_10px_0_rgba(92,46,26,0.16)]"
+            className="rounded-[28px] border border-theme bg-light p-6 text-left shadow-[6px_10px_0_var(--shadow-sm)]"
           >
-            <h3 className="text-lg font-semibold text-[#5c2e1a]">{persona.name}</h3>
-            <dl className="mt-4 space-y-3 text-sm text-[#5c2e1a]/80">
+            <h3 className="text-lg font-semibold text-foreground">{persona.name}</h3>
+            <dl className="mt-4 space-y-3 text-sm text-foreground-80">
               <div>
-                <dt className="font-semibold uppercase tracking-widest text-[#a04c2d]">
+                <dt className="font-semibold uppercase tracking-widest text-accent">
                   Dolor
                 </dt>
                 <dd>{persona.pain}</dd>
               </div>
               <div>
-                <dt className="font-semibold uppercase tracking-widest text-[#a04c2d]">
+                <dt className="font-semibold uppercase tracking-widest text-accent">
                   Ganancia
                 </dt>
                 <dd>{persona.gain}</dd>
