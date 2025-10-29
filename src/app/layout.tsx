@@ -155,7 +155,7 @@ export default function RootLayout({
             <Header />
           </div>
         </div>
-        <div className="pt-[20px] sm:pt-[20px] lg:pt-[20px]">{children}</div>
+        <div>{children}</div>
         {GA_MEASUREMENT_ID ? (
           <Suspense fallback={null}>
             <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
