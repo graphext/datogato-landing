@@ -72,6 +72,30 @@
   --shadow-drop-green: rgba(28, 60, 42, 0.24);
   --shadow-inner-green: #a6dca8;
   --texture-green: rgba(28, 60, 42, 0.1);
+
+  /* Dark theme */
+  --background-dark-theme: #0b1220;
+  --foreground-dark-theme: #e2e8f0;
+  --accent-dark-theme: #38bdf8;
+  --accent-light-dark-theme: #7dd3fc;
+  --accent-dark-dark-theme: #0ea5e9;
+  --border-dark-theme: #1f2a40;
+  --card-bg-dark-theme: #111a2b;
+  --input-bg-dark-theme: #152133;
+  --badge-bg-dark-theme: #1a2840;
+  --light-bg-dark-theme: #141f31;
+  --border-dark-dark-theme: #3b82f6;
+  --success-dark-theme: #34d399;
+  --shadow-dark-theme: rgba(8, 15, 28, 0.5);
+  --shadow-sm-dark-theme: rgba(8, 15, 28, 0.55);
+  --shadow-md-dark-theme: rgba(8, 15, 28, 0.6);
+  --shadow-lg-dark-theme: rgba(8, 15, 28, 0.65);
+  --shadow-xl-dark-theme: rgba(8, 15, 28, 0.7);
+  --shadow-2xl-dark-theme: rgba(8, 15, 28, 0.75);
+  --shadow-strong-dark-theme: rgba(8, 15, 28, 0.85);
+  --shadow-drop-dark-theme: rgba(56, 189, 248, 0.25);
+  --shadow-inner-dark-theme: rgba(14, 165, 233, 0.4);
+  --texture-dark-theme: rgba(148, 163, 184, 0.08);
   
   /* Active theme (defaults to old) */
   --background: var(--background-old);
@@ -237,6 +261,32 @@ html.theme-green {
   --shadow-drop: var(--shadow-drop-green);
   --shadow-inner: var(--shadow-inner-green);
   --texture: var(--texture-green);
+}
+
+.theme-dark,
+html.theme-dark {
+  --background: var(--background-dark-theme);
+  --foreground: var(--foreground-dark-theme);
+  --accent: var(--accent-dark-theme);
+  --accent-light: var(--accent-light-dark-theme);
+  --accent-dark: var(--accent-dark-dark-theme);
+  --border: var(--border-dark-theme);
+  --card-bg: var(--card-bg-dark-theme);
+  --input-bg: var(--input-bg-dark-theme);
+  --badge-bg: var(--badge-bg-dark-theme);
+  --light-bg: var(--light-bg-dark-theme);
+  --border-dark: var(--border-dark-dark-theme);
+  --success: var(--success-dark-theme);
+  --shadow: var(--shadow-dark-theme);
+  --shadow-sm: var(--shadow-sm-dark-theme);
+  --shadow-md: var(--shadow-md-dark-theme);
+  --shadow-lg: var(--shadow-lg-dark-theme);
+  --shadow-xl: var(--shadow-xl-dark-theme);
+  --shadow-2xl: var(--shadow-2xl-dark-theme);
+  --shadow-strong: var(--shadow-strong-dark-theme);
+  --shadow-drop: var(--shadow-drop-dark-theme);
+  --shadow-inner: var(--shadow-inner-dark-theme);
+  --texture: var(--texture-dark-theme);
 }
 
 /* Theme-aware utility classes */

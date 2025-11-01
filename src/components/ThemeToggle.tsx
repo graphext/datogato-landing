@@ -2,24 +2,27 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const THEMES = ["default", "grey", "green"] as const;
+const THEMES = ["default", "grey", "green", "dark"] as const;
 type ThemeName = (typeof THEMES)[number];
 
 const THEME_LABELS: Record<ThemeName, string> = {
   default: "Tema Beige",
   grey: "Tema Gris",
   green: "Tema Verde",
+  dark: "Tema Oscuro",
 };
 
 const THEME_CLASSES: Record<Exclude<ThemeName, "default">, string> = {
   grey: "theme-grey",
   green: "theme-green",
+  dark: "theme-dark",
 };
 
 const THEME_PREVIEW_COLORS: Record<ThemeName, string> = {
   default: "#a04c2d",
   grey: "#636363",
   green: "#2c8a4d",
+  dark: "#38bdf8",
 };
 
 export function ThemeToggle() {
