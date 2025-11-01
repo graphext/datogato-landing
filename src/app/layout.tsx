@@ -48,10 +48,13 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon_gatodato.svg", type: "image/svg+xml" },
+      { url: "/favicon_gatodato-dark.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
       { url: "/favicon_gatodato.svg", rel: "shortcut icon" },
+      { url: "/favicon_gatodato-dark.svg", rel: "shortcut icon", media: "(prefers-color-scheme: dark)" },
     ],
     apple: [
       { url: "/favicon_gatodato.svg" },
+      { url: "/favicon_gatodato-dark.svg", media: "(prefers-color-scheme: dark)" },
     ],
   },
   alternates: {

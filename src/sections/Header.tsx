@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { GatodatoWordmark } from "@/components/graphics/GatodatoWordmark";
+import { Logo } from "@/components/graphics/Logo";
 
 const navigation = [
   { label: "Metodología", href: "/#metodologia" },
@@ -14,7 +14,7 @@ export function Header() {
     <header className="backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 rounded-full border border-theme bg-card-soft px-6 py-3 shadow-[6px_10px_0_var(--shadow-md)] transition sm:px-10">
         <Link href="/" className="flex items-center transition hover:opacity-90">
-          <GatodatoWordmark className="h-8 sm:h-10 text-[var(--accent)]" />
+          <Logo className="sm:h-10" />
           <span className="sr-only">Gatodato</span>
         </Link>
         <nav className="hidden items-center gap-6 text-xs font-semibold uppercase text-foreground-80 lg:flex">

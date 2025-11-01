@@ -2,27 +2,59 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const THEMES = ["default", "grey", "green", "dark"] as const;
-type ThemeName = (typeof THEMES)[number];
+import {
+  isThemeName,
+  THEME_CHANGE_EVENT,
+  THEME_CLASSES,
+  THEME_FAVICONS,
+  THEME_LABELS,
+  THEME_PREVIEW_COLORS,
+  THEMES,
+  type ThemeName,
+} from "@/lib/theme";
 
-const THEME_LABELS: Record<ThemeName, string> = {
-  default: "Tema Beige",
-  grey: "Tema Gris",
-  green: "Tema Verde",
-  dark: "Tema Oscuro",
+const resolveHref = (href: string) => {
+  if (typeof window === "undefined") {
+    return href;
+  }
+
+  try {
+    return new URL(href, window.location.origin).href;
+  } catch {
+    return href;
+  }
 };
 
-const THEME_CLASSES: Record<Exclude<ThemeName, "default">, string> = {
-  grey: "theme-grey",
-  green: "theme-green",
-  dark: "theme-dark",
-};
+const updateFavicons = (theme: ThemeName) => {
+  if (typeof document === "undefined") {
+    return;
+  }
 
-const THEME_PREVIEW_COLORS: Record<ThemeName, string> = {
-  default: "#a04c2d",
-  grey: "#636363",
-  green: "#2c8a4d",
-  dark: "#38bdf8",
+  const href = THEME_FAVICONS[theme];
+  const resolvedHref = resolveHref(href);
+  const selectors = [
+    'link[rel="icon"]:not([media])',
+    'link[rel="shortcut icon"]:not([media])',
+    'link[rel*="icon"]:not([media])',
+    'link[rel="apple-touch-icon"]:not([media])',
+  ];
+
+  const seen = new Set<HTMLLinkElement>();
+
+  selectors.forEach((selector) => {
+    document.querySelectorAll<HTMLLinkElement>(selector).forEach((link) => {
+      if (seen.has(link)) return;
+      seen.add(link);
+
+      if (link.href === resolvedHref) {
+        return;
+      }
+
+      const nextLink = link.cloneNode(true) as HTMLLinkElement;
+      nextLink.href = href;
+      link.parentNode?.replaceChild(nextLink, link);
+    });
+  });
 };
 
 export function ThemeToggle() {
@@ -32,6 +64,10 @@ export function ThemeToggle() {
   const menuRef = useRef<HTMLDivElement | null>(null);
 
   const applyTheme = (nextTheme: ThemeName) => {
+    if (typeof document === "undefined") {
+      return;
+    }
+
     const root = document.documentElement;
     root.classList.remove(...Object.values(THEME_CLASSES));
 
@@ -39,14 +75,26 @@ export function ThemeToggle() {
       root.classList.add(THEME_CLASSES[nextTheme]);
     }
 
-    localStorage.setItem("theme", nextTheme);
+    if (typeof window !== "undefined") {
+      window.localStorage.setItem("theme", nextTheme);
+    }
+
     setTheme(nextTheme);
+    updateFavicons(nextTheme);
+
+    if (typeof window !== "undefined") {
+      window.dispatchEvent(
+        new CustomEvent(THEME_CHANGE_EVENT, {
+          detail: { theme: nextTheme },
+        }),
+      );
+    }
   };
 
   useEffect(() => {
     setMounted(true);
-    const savedTheme = localStorage.getItem("theme") as ThemeName | null;
-    const initialTheme = savedTheme && THEMES.includes(savedTheme) ? savedTheme : "default";
+    const savedTheme = typeof window !== "undefined" ? window.localStorage.getItem("theme") : null;
+    const initialTheme = isThemeName(savedTheme) ? savedTheme : "default";
 
     applyTheme(initialTheme);
   }, []);
