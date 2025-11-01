@@ -28,6 +28,7 @@ const themeInitScript = `
     var favicons = ${JSON.stringify(THEME_FAVICONS)};
     var descriptors = ${JSON.stringify(THEME_FAVICON_DESCRIPTORS)};
     var changeEventName = ${JSON.stringify(THEME_CHANGE_EVENT)};
+    var currentFaviconHref = "";
 
     function resolveHref(href) {
       try {
@@ -37,30 +38,61 @@ const themeInitScript = `
       }
     }
 
-    function replaceManagedFavicons(href) {
-      if (!document.head || !href) {
+    function ensureManagedLink(descriptor, href) {
+      if (!document.head) {
         return;
       }
 
-      var existing = document.querySelectorAll('link[data-theme-managed="true"], link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
-      for (var i = 0; i < existing.length; i++) {
-        var node = existing[i];
-        if (node && node.parentNode) {
-          node.parentNode.removeChild(node);
-        }
+      var link = document.head.querySelector('link[data-theme-managed="true"][data-theme-rel="' + descriptor.rel + '"]');
+
+      if (!(link instanceof HTMLLinkElement)) {
+        link = document.head.querySelector('link[rel="' + descriptor.rel + '"]');
       }
 
-      for (var d = 0; d < descriptors.length; d++) {
-        var descriptor = descriptors[d];
-        var link = document.createElement("link");
-        link.setAttribute("data-theme-managed", "true");
-        link.setAttribute("data-theme-rel", descriptor.rel);
-        link.rel = descriptor.rel;
-        if (descriptor.type) {
-          link.type = descriptor.type;
-        }
-        link.href = href;
+      if (!(link instanceof HTMLLinkElement)) {
+        link = document.createElement("link");
         document.head.appendChild(link);
+      }
+
+      link.setAttribute("data-theme-managed", "true");
+      link.setAttribute("data-theme-rel", descriptor.rel);
+      link.rel = descriptor.rel;
+      if (descriptor.type) {
+        link.type = descriptor.type;
+      } else {
+        link.removeAttribute("type");
+      }
+      link.removeAttribute("media");
+      link.href = href;
+    }
+
+    function applyFavicons(rawHref) {
+      var href = resolveHref(rawHref);
+      if (!href) {
+        return;
+      }
+      if (href === currentFaviconHref && document.head?.querySelector('link[data-theme-managed="true"][href="' + href + '"]')) {
+        return;
+      }
+      currentFaviconHref = href;
+
+      document.querySelectorAll('link[rel*="icon"][media]').forEach(function (node) {
+        if (!(node instanceof HTMLLinkElement)) {
+          return;
+        }
+        node.removeAttribute("media");
+        node.setAttribute("data-theme-managed", "true");
+        node.href = href;
+      });
+
+      document.querySelectorAll('link[rel*="icon"]:not([data-theme-managed="true"])').forEach(function (node) {
+        if (node.parentNode) {
+          node.parentNode.removeChild(node);
+        }
+      });
+
+      for (var d = 0; d < descriptors.length; d++) {
+        ensureManagedLink(descriptors[d], href);
       }
     }
 
@@ -92,9 +124,7 @@ const themeInitScript = `
       root.setAttribute("data-theme", theme);
 
       var faviconHref = favicons[theme];
-      if (faviconHref) {
-        replaceManagedFavicons(resolveHref(faviconHref));
-      }
+      applyFavicons(faviconHref);
 
       try {
         window.localStorage.setItem("theme", theme);
@@ -102,6 +132,64 @@ const themeInitScript = `
 
       if (typeof window.CustomEvent === "function") {
         window.dispatchEvent(new CustomEvent(changeEventName, { detail: { theme: theme } }));
+      }
+
+      try {
+        window.__applyThemeFavicons = function (nextHref) {
+          applyFavicons(nextHref);
+        };
+      } catch (assignError) {}
+
+      if (document.head) {
+        var observer = new MutationObserver(function (mutations) {
+          if (!currentFaviconHref) {
+            return;
+          }
+
+          var shouldReapply = false;
+
+          for (var m = 0; m < mutations.length; m++) {
+            var mutation = mutations[m];
+
+            if (mutation.type === "childList") {
+              for (var a = 0; a < mutation.addedNodes.length; a++) {
+                var added = mutation.addedNodes[a];
+                if (
+                  added instanceof HTMLLinkElement &&
+                  (added.rel === "icon" || added.rel === "shortcut icon" || added.rel === "apple-touch-icon") &&
+                  added.getAttribute("data-theme-managed") !== "true"
+                ) {
+                  shouldReapply = true;
+                  break;
+                }
+              }
+              if (shouldReapply) {
+                break;
+              }
+            }
+
+            if (
+              mutation.type === "attributes" &&
+              mutation.target instanceof HTMLLinkElement &&
+              (mutation.target.rel === "icon" || mutation.target.rel === "shortcut icon" || mutation.target.rel === "apple-touch-icon") &&
+              mutation.target.getAttribute("data-theme-managed") !== "true"
+            ) {
+              shouldReapply = true;
+              break;
+            }
+          }
+
+          if (shouldReapply) {
+            applyFavicons(currentFaviconHref);
+          }
+        });
+
+        observer.observe(document.head, {
+          childList: true,
+          subtree: true,
+          attributes: true,
+          attributeFilter: ["rel", "href", "media"],
+        });
       }
     } catch (error) {}
   })();
@@ -137,15 +225,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-  },
-  icons: {
-    icon: [
-      { url: "/favicon_gatodato.svg", type: "image/svg+xml" },
-      { url: "/favicon_gatodato.svg", rel: "shortcut icon" },
-    ],
-    apple: [
-      { url: "/favicon_gatodato.svg" },
-    ],
   },
   alternates: {
     canonical: url,

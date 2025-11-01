@@ -14,6 +14,12 @@ import {
   type ThemeName,
 } from "@/lib/theme";
 
+declare global {
+  interface Window {
+    __applyThemeFavicons?: (href: string) => void;
+  }
+}
+
 const resolveHref = (href: string) => {
   if (typeof window === "undefined") {
     return href;
@@ -34,21 +40,39 @@ const updateFavicons = (theme: ThemeName) => {
   const href = THEME_FAVICONS[theme];
   const resolvedHref = resolveHref(href);
 
-  const removalSelector = 'link[data-theme-managed="true"], link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]';
-  document.querySelectorAll(removalSelector).forEach((node) => {
-    node.parentNode?.removeChild(node);
-  });
+  if (typeof window !== "undefined" && typeof window.__applyThemeFavicons === "function") {
+    window.__applyThemeFavicons(resolvedHref);
+    return;
+  }
+
+  const managedSelector = (rel: string) => `link[data-theme-managed="true"][data-theme-rel="${rel}"]`;
 
   THEME_FAVICON_DESCRIPTORS.forEach((descriptor) => {
-    const link = document.createElement("link");
+    let link = document.head?.querySelector(managedSelector(descriptor.rel)) as HTMLLinkElement | null;
+
+    if (!link) {
+      link = document.head?.querySelector(`link[rel="${descriptor.rel}"]`) as HTMLLinkElement | null;
+    }
+
+    if (!link) {
+      link = document.createElement("link");
+      document.head?.appendChild(link);
+    }
+
+    if (!link) {
+      return;
+    }
+
     link.setAttribute("data-theme-managed", "true");
     link.setAttribute("data-theme-rel", descriptor.rel);
     link.rel = descriptor.rel;
     if (descriptor.type) {
       link.type = descriptor.type;
+    } else {
+      link.removeAttribute("type");
     }
+    link.removeAttribute("media");
     link.href = resolvedHref;
-    document.head?.appendChild(link);
   });
 };
 
