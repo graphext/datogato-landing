@@ -31,6 +31,17 @@ export const THEME_FAVICONS: Record<ThemeName, string> = {
 
 export const THEME_CHANGE_EVENT = "themechange";
 
+export type ThemeFaviconDescriptor = {
+  rel: string;
+  type?: string;
+};
+
+export const THEME_FAVICON_DESCRIPTORS: readonly ThemeFaviconDescriptor[] = [
+  { rel: "icon", type: "image/svg+xml" },
+  { rel: "shortcut icon" },
+  { rel: "apple-touch-icon" },
+];
+
 export function isThemeName(value: unknown): value is ThemeName {
   return typeof value === "string" && (THEMES as readonly string[]).includes(value as string);
 }

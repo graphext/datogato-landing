@@ -6,6 +6,7 @@ import {
   isThemeName,
   THEME_CHANGE_EVENT,
   THEME_CLASSES,
+  THEME_FAVICON_DESCRIPTORS,
   THEME_FAVICONS,
   THEME_LABELS,
   THEME_PREVIEW_COLORS,
@@ -32,28 +33,22 @@ const updateFavicons = (theme: ThemeName) => {
 
   const href = THEME_FAVICONS[theme];
   const resolvedHref = resolveHref(href);
-  const selectors = [
-    'link[rel="icon"]:not([media])',
-    'link[rel="shortcut icon"]:not([media])',
-    'link[rel*="icon"]:not([media])',
-    'link[rel="apple-touch-icon"]:not([media])',
-  ];
 
-  const seen = new Set<HTMLLinkElement>();
+  const removalSelector = 'link[data-theme-managed="true"], link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]';
+  document.querySelectorAll(removalSelector).forEach((node) => {
+    node.parentNode?.removeChild(node);
+  });
 
-  selectors.forEach((selector) => {
-    document.querySelectorAll<HTMLLinkElement>(selector).forEach((link) => {
-      if (seen.has(link)) return;
-      seen.add(link);
-
-      if (link.href === resolvedHref) {
-        return;
-      }
-
-      const nextLink = link.cloneNode(true) as HTMLLinkElement;
-      nextLink.href = href;
-      link.parentNode?.replaceChild(nextLink, link);
-    });
+  THEME_FAVICON_DESCRIPTORS.forEach((descriptor) => {
+    const link = document.createElement("link");
+    link.setAttribute("data-theme-managed", "true");
+    link.setAttribute("data-theme-rel", descriptor.rel);
+    link.rel = descriptor.rel;
+    if (descriptor.type) {
+      link.type = descriptor.type;
+    }
+    link.href = resolvedHref;
+    document.head?.appendChild(link);
   });
 };
 
@@ -75,6 +70,8 @@ export function ThemeToggle() {
       root.classList.add(THEME_CLASSES[nextTheme]);
     }
 
+    root.dataset.theme = nextTheme;
+
     if (typeof window !== "undefined") {
       window.localStorage.setItem("theme", nextTheme);
     }
@@ -92,11 +89,54 @@ export function ThemeToggle() {
   };
 
   useEffect(() => {
-    setMounted(true);
-    const savedTheme = typeof window !== "undefined" ? window.localStorage.getItem("theme") : null;
-    const initialTheme = isThemeName(savedTheme) ? savedTheme : "default";
+    const root = typeof document !== "undefined" ? document.documentElement : null;
+    const storedTheme = typeof window !== "undefined" ? window.localStorage.getItem("theme") : null;
+    const datasetTheme = root?.dataset.theme;
+    const initialThemeCandidate = datasetTheme ?? storedTheme;
+    const initialTheme = isThemeName(initialThemeCandidate) ? initialThemeCandidate : "default";
 
-    applyTheme(initialTheme);
+    setTheme(initialTheme);
+
+    if (!root) {
+      updateFavicons(initialTheme);
+      setMounted(true);
+      return;
+    }
+
+    const expectedClass = initialTheme !== "default" ? THEME_CLASSES[initialTheme] : undefined;
+    const hasExpectedClass = expectedClass ? root.classList.contains(expectedClass) : true;
+    const datasetMatches = root.dataset.theme === initialTheme;
+
+    if (!hasExpectedClass || !datasetMatches) {
+      applyTheme(initialTheme);
+    } else {
+      if (typeof window !== "undefined") {
+        window.localStorage.setItem("theme", initialTheme);
+      }
+      updateFavicons(initialTheme);
+    }
+
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
+    const handler = ((event: Event) => {
+      const customEvent = event as CustomEvent<{ theme?: unknown }>;
+      const detailTheme = customEvent.detail?.theme;
+      if (isThemeName(detailTheme)) {
+        setTheme((prev) => (prev === detailTheme ? prev : detailTheme));
+      }
+    }) as EventListener;
+
+    window.addEventListener(THEME_CHANGE_EVENT, handler);
+
+    return () => {
+      window.removeEventListener(THEME_CHANGE_EVENT, handler);
+    };
   }, []);
 
   useEffect(() => {
@@ -136,8 +176,8 @@ export function ThemeToggle() {
         className="inline-flex items-center gap-2 rounded-full border border-theme bg-card px-4 py-2 text-xs font-semibold uppercase tracking-widest text-foreground opacity-50"
         aria-label="Loading theme toggle"
       >
-        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[var(--accent)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--card-bg)]" />
+        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-card-bg" />
         </span>
         Cargando...
       </button>
@@ -149,13 +189,13 @@ export function ThemeToggle() {
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex items-center gap-1.5 rounded-full border border-theme bg-card px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-foreground transition hover:bg-[var(--input-bg)] hover:shadow-[4px_6px_0_var(--shadow-lg)]"
+        className="inline-flex items-center gap-1.5 rounded-full border border-theme bg-card px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-foreground transition hover:bg-input-bg hover:shadow-[4px_6px_0_var(--shadow-lg)]"
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label="Seleccionar tema de color"
       >
-        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-[var(--accent)]">
-          <span className="h-1.5 w-1.5 rounded-full bg-[var(--card-bg)]" />
+        <span className="flex h-3 w-3 items-center justify-center rounded-full bg-accent">
+          <span className="h-1.5 w-1.5 rounded-full bg-card-bg" />
         </span>
         {buttonLabel}
         <svg
@@ -191,8 +231,8 @@ export function ThemeToggle() {
                   aria-selected={isActive}
                   className={`flex w-full items-center gap-2.5 px-3 py-2 text-left text-[0.6rem] font-semibold uppercase tracking-[0.25em] transition ${
                     isActive
-                      ? "bg-[var(--input-bg)] text-foreground"
-                      : "text-foreground hover:bg-[var(--input-bg)]"
+                      ? "bg-input-bg text-foreground"
+                      : "text-foreground hover:bg-input-bg"
                   }`}
                   onClick={() => {
                     applyTheme(option);

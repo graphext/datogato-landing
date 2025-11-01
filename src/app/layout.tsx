@@ -6,6 +6,13 @@ import { dmSans, cherryCream, lora } from "./fonts";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { Header } from "@/sections/Header";
 import { canonical } from "@/lib/metadata";
+import {
+  THEME_CHANGE_EVENT,
+  THEME_CLASSES,
+  THEME_FAVICON_DESCRIPTORS,
+  THEME_FAVICONS,
+  THEMES,
+} from "@/lib/theme";
 import "./globals.css";
 
 const title = "Gatodato · Mejor Agencia para Visibilidad en AI de España";
@@ -13,6 +20,92 @@ const description =
   "Gatodato potencia la visibilidad en ChatGPT, Google AI Overview, Gemini, Perplexity y Grok con estrategias SEO diseñadas para modelos de IA.";
 const url = canonical;
 const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID ?? "";
+
+const themeInitScript = `
+  (function () {
+    var themes = ${JSON.stringify(THEMES)};
+    var themeClasses = ${JSON.stringify(THEME_CLASSES)};
+    var favicons = ${JSON.stringify(THEME_FAVICONS)};
+    var descriptors = ${JSON.stringify(THEME_FAVICON_DESCRIPTORS)};
+    var changeEventName = ${JSON.stringify(THEME_CHANGE_EVENT)};
+
+    function resolveHref(href) {
+      try {
+        return new URL(href, window.location.origin).href;
+      } catch (urlError) {
+        return href;
+      }
+    }
+
+    function replaceManagedFavicons(href) {
+      if (!document.head || !href) {
+        return;
+      }
+
+      var existing = document.querySelectorAll('link[data-theme-managed="true"], link[rel="icon"], link[rel="shortcut icon"], link[rel="apple-touch-icon"]');
+      for (var i = 0; i < existing.length; i++) {
+        var node = existing[i];
+        if (node && node.parentNode) {
+          node.parentNode.removeChild(node);
+        }
+      }
+
+      for (var d = 0; d < descriptors.length; d++) {
+        var descriptor = descriptors[d];
+        var link = document.createElement("link");
+        link.setAttribute("data-theme-managed", "true");
+        link.setAttribute("data-theme-rel", descriptor.rel);
+        link.rel = descriptor.rel;
+        if (descriptor.type) {
+          link.type = descriptor.type;
+        }
+        link.href = href;
+        document.head.appendChild(link);
+      }
+    }
+
+    try {
+      var theme = "default";
+
+      try {
+        var stored = window.localStorage.getItem("theme");
+        if (typeof stored === "string" && themes.indexOf(stored) !== -1) {
+          theme = stored;
+        }
+      } catch (storageError) {}
+
+      var root = document.documentElement;
+      if (!root) {
+        return;
+      }
+
+      for (var key in themeClasses) {
+        if (Object.prototype.hasOwnProperty.call(themeClasses, key)) {
+          root.classList.remove(themeClasses[key]);
+        }
+      }
+
+      if (theme !== "default" && themeClasses[theme]) {
+        root.classList.add(themeClasses[theme]);
+      }
+
+      root.setAttribute("data-theme", theme);
+
+      var faviconHref = favicons[theme];
+      if (faviconHref) {
+        replaceManagedFavicons(resolveHref(faviconHref));
+      }
+
+      try {
+        window.localStorage.setItem("theme", theme);
+      } catch (writeError) {}
+
+      if (typeof window.CustomEvent === "function") {
+        window.dispatchEvent(new CustomEvent(changeEventName, { detail: { theme: theme } }));
+      }
+    } catch (error) {}
+  })();
+`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(url),
@@ -48,13 +141,10 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon_gatodato.svg", type: "image/svg+xml" },
-      { url: "/favicon_gatodato-dark.svg", type: "image/svg+xml", media: "(prefers-color-scheme: dark)" },
       { url: "/favicon_gatodato.svg", rel: "shortcut icon" },
-      { url: "/favicon_gatodato-dark.svg", rel: "shortcut icon", media: "(prefers-color-scheme: dark)" },
     ],
     apple: [
       { url: "/favicon_gatodato.svg" },
-      { url: "/favicon_gatodato-dark.svg", media: "(prefers-color-scheme: dark)" },
     ],
   },
   alternates: {
@@ -111,7 +201,10 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body
         className={`${dmSans.className} ${dmSans.variable} ${cherryCream.variable} ${lora.variable} antialiased scroll-smooth`}
       >
