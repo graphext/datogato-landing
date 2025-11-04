@@ -39,8 +39,8 @@ export type ThemeFaviconDescriptor = {
 };
 
 export const THEME_FAVICON_DESCRIPTORS: readonly ThemeFaviconDescriptor[] = [
-  { rel: "icon", type: "image/svg+xml" },
-  { rel: "shortcut icon", type: "image/svg+xml" },
+  { rel: "icon", type: "image/svg+xml", sizes: "any" },
+  { rel: "shortcut icon", type: "image/svg+xml", sizes: "any" },
   { rel: "apple-touch-icon", type: "image/svg+xml" },
   { rel: "mask-icon", type: "image/svg+xml", maskColor: true },
 ];

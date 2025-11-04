@@ -56,6 +56,7 @@ const updateFavicons = (theme: ThemeName) => {
 
   const href = THEME_FAVICONS[theme];
   const resolvedHref = resolveHref(href);
+  const versionedHref = `${resolvedHref}${resolvedHref.includes('?') ? '&' : '?'}v=${encodeURIComponent(theme)}`;
 
   if (typeof window !== "undefined" && typeof window.__applyThemeFavicons === "function") {
     window.__applyThemeFavicons(theme);
@@ -100,7 +101,10 @@ const updateFavicons = (theme: ThemeName) => {
       link.removeAttribute("sizes");
     }
     link.removeAttribute("media");
-    link.href = resolvedHref;
+    link.href = versionedHref;
+    if (link.parentNode === document.head) {
+      document.head.appendChild(link);
+    }
   });
 };
 

@@ -77,6 +77,10 @@ const themeInitScript = `
       }
       link.removeAttribute("media");
       link.href = href;
+      // Move to the end to increase precedence across browsers
+      if (link.parentNode === document.head) {
+        document.head.appendChild(link);
+      }
     }
 
     function safeRemove(node) {
@@ -99,6 +103,7 @@ const themeInitScript = `
       currentTheme = themes.indexOf(themeName) !== -1 ? themeName : "default";
       var rawHref = favicons[currentTheme] || favicons.default;
       var href = resolveHref(rawHref);
+      var versionedHref = href + (href.indexOf('?') === -1 ? ('?v=' + encodeURIComponent(themeName)) : ('&v=' + encodeURIComponent(themeName)));
       if (!href) {
         return;
       }
@@ -107,7 +112,7 @@ const themeInitScript = `
       // Only ensure our managed favicon links exist and are updated.
 
       for (var d = 0; d < descriptors.length; d++) {
-        ensureManagedLink(descriptors[d], href, currentTheme);
+        ensureManagedLink(descriptors[d], versionedHref, currentTheme);
       }
     }
 
