@@ -79,6 +79,22 @@ const themeInitScript = `
       link.href = href;
     }
 
+    function safeRemove(node) {
+      if (!node) {
+        return;
+      }
+
+      if (typeof node.remove === "function") {
+        node.remove();
+        return;
+      }
+
+      var parent = node.parentNode;
+      if (parent && typeof parent.removeChild === "function") {
+        parent.removeChild(node);
+      }
+    }
+
     function applyFaviconsForTheme(themeName) {
       currentTheme = themes.indexOf(themeName) !== -1 ? themeName : "default";
       var rawHref = favicons[currentTheme] || favicons.default;
@@ -87,23 +103,8 @@ const themeInitScript = `
         return;
       }
 
-      document.querySelectorAll('link[rel*="icon"][media]').forEach(function (node) {
-        if (!(node instanceof HTMLLinkElement)) {
-          return;
-        }
-        node.removeAttribute("media");
-        node.setAttribute("data-theme-managed", "true");
-        node.href = href;
-      });
-
-      document
-        .querySelectorAll('link[rel*="icon"]:not([data-theme-managed="true"]), link[rel="apple-touch-icon"]:not([data-theme-managed="true"]), link[rel="mask-icon"]:not([data-theme-managed="true"])')
-        .forEach(function (node) {
-          if (!(node instanceof HTMLLinkElement)) {
-            return;
-          }
-          node.parentNode?.removeChild(node);
-        });
+      // Do not delete or mutate unmanaged links (React/Next owns them).
+      // Only ensure our managed favicon links exist and are updated.
 
       for (var d = 0; d < descriptors.length; d++) {
         ensureManagedLink(descriptors[d], href, currentTheme);

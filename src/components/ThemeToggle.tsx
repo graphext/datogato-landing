@@ -38,6 +38,22 @@ const updateFavicons = (theme: ThemeName) => {
     return;
   }
 
+  const safeRemove = (node: Element | null) => {
+    if (!node) {
+      return;
+    }
+
+    if (typeof (node as HTMLElement).remove === "function") {
+      (node as HTMLElement).remove();
+      return;
+    }
+
+    const parent = node.parentNode;
+    if (parent && typeof parent.removeChild === "function") {
+      parent.removeChild(node);
+    }
+  };
+
   const href = THEME_FAVICONS[theme];
   const resolvedHref = resolveHref(href);
 
@@ -47,12 +63,6 @@ const updateFavicons = (theme: ThemeName) => {
   }
 
   const managedSelector = (rel: string) => `link[data-theme-managed="true"][data-theme-rel="${rel}"]`;
-
-  document
-    .querySelectorAll('link[rel*="icon"]:not([data-theme-managed="true"]), link[rel="apple-touch-icon"]:not([data-theme-managed="true"]), link[rel="mask-icon"]:not([data-theme-managed="true"])')
-    .forEach((node) => {
-      node.parentNode?.removeChild(node);
-    });
 
   THEME_FAVICON_DESCRIPTORS.forEach((descriptor) => {
     let link = document.head?.querySelector(managedSelector(descriptor.rel)) as HTMLLinkElement | null;
