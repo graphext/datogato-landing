@@ -36,8 +36,8 @@ export function Hero() {
         <div className="relative mx-auto flex max-w-sm flex-1 justify-center">
           <div className="relative w-full max-w-[384px]">
             <Image
-              src="/assets/image.png"
-              alt="Ilustración de gato y modelos de IA"
+              src="/assets/gatodato_main_image.png"
+              alt="Ilustración de gato Gatodato señalando modelos de IA"
               width={384}
               height={256}
               className="h-auto w-full drop-shadow-accent"
